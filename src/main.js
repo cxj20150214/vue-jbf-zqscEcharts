@@ -16,6 +16,12 @@ import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 import $ from 'jquery'
 import scroll from 'vue-seamless-scroll'
+import 'lib-flexible'
+import 'babel-polyfill'
+import Es6Promise from 'es6-promise'
+import axios from 'axios'
+Vue.prototype.axios=axios
+Es6Promise.polyfill()
 Vue.use(scroll)
 /**
  * If you don't want to use mock-server
