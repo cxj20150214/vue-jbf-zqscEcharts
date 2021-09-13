@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      title: '京北方',
+      title: '风险视图',
       logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
     }
   }

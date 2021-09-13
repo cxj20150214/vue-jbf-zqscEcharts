@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '京北方',
+  title: '风险视图',
 
   /**
    * @type {boolean} true | false

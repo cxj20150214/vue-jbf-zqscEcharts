@@ -6,10 +6,7 @@
     </div>
     <div class="box1">
       <div class="mod1">
-        <div
-          class="selectBox
-        "
-        >
+        <div class="selectBox">
           <div class="box4_tab">
             <p
               :class="{ active: showDate == 1 }"
@@ -120,7 +117,7 @@
               <li>
                 <p>警示级</p>
                 <el-progress
-                  class="jdt_box "
+                  class="jdt_box"
                   :text-inside="true"
                   :stroke-width="14"
                   :percentage="this.jsjData"
@@ -245,41 +242,6 @@
 </template>
 <script>
 import "echarts/map/js/china.js";
-import "echarts/map/js/province/fujian.js";
-import "echarts/map/js/province/anhui.js";
-import "echarts/map/js/province/aomen.js";
-import "echarts/map/js/province/beijing.js";
-import "echarts/map/js/province/chongqing.js";
-import "echarts/map/js/province/gansu.js";
-import "echarts/map/js/province/guangdong.js";
-import "echarts/map/js/province/guangxi.js";
-import "echarts/map/js/province/guizhou.js";
-import "echarts/map/js/province/hainan.js";
-import "echarts/map/js/province/hebei.js";
-import "echarts/map/js/province/heilongjiang.js";
-import "echarts/map/js/province/henan.js";
-import "echarts/map/js/province/hubei.js";
-import "echarts/map/js/province/hunan.js";
-import "echarts/map/js/province/jiangsu.js";
-import "echarts/map/js/province/jiangxi.js";
-import "echarts/map/js/province/jilin.js";
-import "echarts/map/js/province/liaoning.js";
-import "echarts/map/js/province/neimenggu.js";
-import "echarts/map/js/province/ningxia.js";
-import "echarts/map/js/province/qinghai.js";
-import "echarts/map/js/province/shandong.js";
-import "echarts/map/js/province/shanghai.js";
-import "echarts/map/js/province/shanxi.js";
-import "echarts/map/js/province/shanxi1.js";
-import "echarts/map/js/province/sichuan.js";
-import "echarts/map/js/province/taiwan.js";
-import "echarts/map/js/province/tianjin.js";
-import "echarts/map/js/province/xianggang.js";
-import "echarts/map/js/province/xinjiang.js";
-import "echarts/map/js/province/xizang.js";
-import "echarts/map/js/province/yunnan.js";
-import "echarts/map/js/province/zhejiang.js";
-// import obj from "echarts/map/json/province/shanxi1.json";
 import "echarts-liquidfill/src/liquidFill.js";
 export default {
   name: "demo8",
@@ -294,79 +256,79 @@ export default {
         {
           name: "北京",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "天津",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "重庆",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "厦门",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "深圳",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "苏州",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "大连",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "青岛",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "三峡",
           value: 116,
-          id: 2222222
-        }
+          id: 2222222,
+        },
       ],
       zrData: [
         //拒件分布
         {
           name: "存在征信不良记录",
-          value: "40"
+          value: "40",
         },
         {
           name: "呈现洗钱风险特征",
-          value: "50"
+          value: "50",
         },
         {
           name: "存在司法涉诉事件",
-          value: "60"
+          value: "60",
         },
         {
           name: "与业主身份不相符",
-          value: "70"
+          value: "70",
         },
         {
           name: "已列入内部黑名单",
-          value: "70"
+          value: "70",
         },
         {
           name: "已列入外部黑名单",
-          value: "70"
+          value: "70",
         },
         {
           name: "其他存在风险事项",
-          value: "70"
-        }
+          value: "70",
+        },
       ],
       shuiqiuData: 0.8, //存量评级
       fxjData: 20,
@@ -383,46 +345,46 @@ export default {
         {
           name: "风险级",
           value: 80,
-          color: "#F56C6C"
+          color: "#F56C6C",
         },
         {
           name: "警示级",
           value: 70,
-          color: "#E6A23C"
+          color: "#E6A23C",
         },
         {
           name: "预警级",
           value: 60,
-          color: "#FFD52E"
+          color: "#FFD52E",
         },
         {
           name: "关注级",
           value: 50,
-          color: "#409EFF"
-        }
+          color: "#409EFF",
+        },
       ],
       fxyjData1: [
         //风险预警
         {
           name: "风险级",
           value: 20,
-          color: "#F56C6C"
+          color: "#F56C6C",
         },
         {
           name: "警示级",
           value: 30,
-          color: "#E6A23C"
+          color: "#E6A23C",
         },
         {
           name: "预警级",
           value: 40,
-          color: "#FFD52E"
+          color: "#FFD52E",
         },
         {
           name: "关注级",
           value: 50,
-          color: "#409EFF"
-        }
+          color: "#409EFF",
+        },
       ],
       fxczData1: [90, 80, 65, 40], //风险处置
       fxczData2: [40, 70, 40, 30],
@@ -430,16 +392,16 @@ export default {
         //定期巡检
         {
           value: 400,
-          name: "远程巡检"
+          name: "远程巡检",
         },
         {
           value: 350,
-          name: "现场巡检"
+          name: "现场巡检",
         },
         {
           value: 200,
-          name: "专项巡检"
-        }
+          name: "专项巡检",
+        },
       ],
       ycxjData: 8.1,
       xcxjData: 55.2844444444,
@@ -458,97 +420,20 @@ export default {
         "贵州",
         "新疆",
         "青海",
-        "西藏"
+        "西藏",
       ],
       zsData: [
-        1100,
-        950,
-        780,
-        560,
-        555,
-        543,
-        432,
-        410,
-        395,
-        360,
-        340,
-        220,
-        211,
-        201,
-        150,
-        142,
-        132,
-        120,
-        105,
-        101,
-        92,
-        82,
-        63,
-        40,
-        35,
-        26,
-        12,
-        8
+        1100, 950, 780, 560, 555, 543, 432, 410, 395, 360, 340, 220, 211, 201,
+        150, 142, 132, 120, 105, 101, 92, 82, 63, 40, 35, 26, 12, 8,
       ],
       wclData: [
-        1100,
-        950,
-        780,
-        560,
-        555,
-        543,
-        432,
-        410,
-        395,
-        360,
-        340,
-        220,
-        211,
-        201,
-        150,
-        142,
-        132,
-        120,
-        105,
-        101,
-        92,
-        82,
-        63,
-        40,
-        35,
-        26,
-        12,
-        8
+        1100, 950, 780, 560, 555, 543, 432, 410, 395, 360, 340, 220, 211, 201,
+        150, 142, 132, 120, 105, 101, 92, 82, 63, 40, 35, 26, 12, 8,
       ],
       wclvData: [
-        6.1,
-        5.3,
-        4.67,
-        4.92,
-        3.58,
-        3.6,
-        3.99,
-        3.67,
-        3.92,
-        3.58,
-        3,
-        3.99,
-        3.67,
-        4.92,
-        3.58,
-        2.8,
-        2.99,
-        2.67,
-        1.92,
-        1.58,
-        1,
-        1.99,
-        1.67,
-        1.92,
-        1.58,
-        1,
-        1.99,
-        1.67
+        6.1, 5.3, 4.67, 4.92, 3.58, 3.6, 3.99, 3.67, 3.92, 3.58, 3, 3.99, 3.67,
+        4.92, 3.58, 2.8, 2.99, 2.67, 1.92, 1.58, 1, 1.99, 1.67, 1.92, 1.58, 1,
+        1.99, 1.67,
       ],
       //默认参数
       box4PieData: ["进件数", "通过数", "准入通过率(%)"],
@@ -558,155 +443,155 @@ export default {
       options: [
         {
           value: "选项1",
-          label: "全国"
+          label: "全国",
         },
         {
           value: "选项2",
-          label: "福建"
+          label: "福建",
         },
         {
           value: "选项3",
-          label: "浙江"
-        }
+          label: "浙江",
+        },
       ],
       dituData: [
         {
           name: "重庆",
-          value: 0
+          value: 0,
         },
         {
           name: "云南",
-          value: 0
+          value: 0,
         },
         {
           name: "辽宁",
-          value: 0
+          value: 0,
         },
         {
           name: "黑龙江",
-          value: 0
+          value: 0,
         },
         {
           name: "广西",
-          value: 20
+          value: 20,
         },
         {
           name: "甘肃",
-          value: 20
+          value: 20,
         },
         {
           name: "山西",
-          value: 10
+          value: 10,
         },
         {
           name: "陕西",
-          value: 0
+          value: 0,
         },
         {
           name: "吉林",
-          value: 40
+          value: 40,
         },
         {
           name: "贵州",
-          value: 20
+          value: 20,
         },
         {
           name: "新疆",
-          value: 0
+          value: 0,
         },
         {
           name: "青海",
-          value: 10
+          value: 10,
         },
         {
           name: "西藏",
-          value: 0
+          value: 0,
         },
         {
           name: "四川",
-          value: 20
+          value: 20,
         },
         {
           name: "宁夏",
-          value: 0
+          value: 0,
         },
         {
           name: "海南",
-          value: 0
+          value: 0,
         },
         {
           name: "台湾",
-          value: 0
+          value: 0,
         },
         {
           name: "香港",
-          value: 0
+          value: 0,
         },
         {
           name: "澳门",
-          value: 0
+          value: 0,
         },
         {
           name: "上海",
-          value: 100
+          value: 100,
         },
         {
           name: "安徽",
-          value: 150
+          value: 150,
         },
         {
           name: "江苏",
-          value: 140
+          value: 140,
         },
         {
           name: "浙江",
-          value: 120
+          value: 120,
         },
         {
           name: "北京",
-          value: 80
+          value: 80,
         },
         {
           name: "天津",
-          value: 60
+          value: 60,
         },
         {
           name: "河北",
-          value: 0
+          value: 0,
         },
         {
           name: "河南",
-          value: 0
+          value: 0,
         },
         {
           name: "内蒙古",
-          value: 0
+          value: 0,
         },
         {
           name: "湖南",
-          value: 0
+          value: 0,
         },
         {
           name: "山东",
-          value: 180
+          value: 180,
         },
         {
           name: "江西",
-          value: 160
+          value: 160,
         },
         {
           name: "湖北",
-          value: 0
+          value: 0,
         },
         {
           name: "福建",
           value: 80,
-          id: 350000
+          id: 350000,
         },
         {
           name: "广东",
-          value: 40
-        }
+          value: 40,
+        },
       ],
       showShen: false,
       valueSelect: "全国",
@@ -721,7 +606,7 @@ export default {
       nowTime: "", // 当前时间
       nowWeek: "", // 当前星期
       xjPie: true,
-      xjPieYear: false
+      xjPieYear: false,
     };
   },
   computed: {},
@@ -730,16 +615,16 @@ export default {
       this.dituData = [
         {
           name: "泉州市",
-          value: "100"
+          value: "100",
         },
         {
           name: "厦门市",
-          value: "100"
+          value: "100",
         },
         {
           name: "漳州市",
-          value: "100"
-        }
+          value: "100",
+        },
       ];
     },
     // 返回中国地图
@@ -748,48 +633,48 @@ export default {
         {
           name: "北京",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "天津",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "重庆",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "厦门",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "深圳",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "苏州",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "大连",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "青岛",
           value: 116,
-          id: 2222222
+          id: 2222222,
         },
         {
           name: "三峡",
           value: 116,
-          id: 2222222
-        }
+          id: 2222222,
+        },
       ];
       this.mapName = "china";
       // this.$echarts.registerMap("china")
@@ -800,20 +685,20 @@ export default {
     getJGH1(val) {
       console.log(val);
       let obj = {};
-      obj = this.options.find(item => {
+      obj = this.options.find((item) => {
         return item.value === val;
       });
       let getLabel = "";
       getLabel = obj.label;
       this.xjPieYear = true;
-      this.xjPie = false
+      this.xjPie = false;
       // this.province = getLabel;
     },
     // 获取下拉框机构号和名称
     getJGH(val) {
       console.log(val);
       let obj = {};
-      obj = this.options.find(item => {
+      obj = this.options.find((item) => {
         return item.value === val;
       });
       let getLabel = "";
@@ -825,19 +710,19 @@ export default {
       this.showDate = 1;
       this.selectTime = "当日";
       this.xjPieYear = false;
-      this.xjPie = true
+      this.xjPie = true;
     },
     clickDY() {
       this.showDate = 2;
       this.selectTime = "当月";
       this.xjPieYear = false;
-      this.xjPie = true
+      this.xjPie = true;
     },
     clickDN() {
       this.showDate = 3;
       this.selectTime = "当年";
       this.xjPieYear = true;
-      this.xjPie = false
+      this.xjPie = false;
     },
     // 预警 存量 准入 巡检  切换
     clickYJ() {
@@ -937,7 +822,7 @@ export default {
     currentTime() {
       setInterval(this.getDate, 500);
     },
-    getDate: function() {
+    getDate: function () {
       var _this = this;
       let yy = new Date().getFullYear();
       let mm = new Date().getMonth() + 1;
@@ -1009,7 +894,7 @@ export default {
       // 省份点击联动
       let _that = this;
       myChart.off("click");
-      myChart.on("click", function(param) {
+      myChart.on("click", function (param) {
         console.log(param);
         _that.PieClick(param);
       });
@@ -1018,56 +903,56 @@ export default {
       var timeTicket = null;
       var dataLength = this.dituData.length;
       timeTicket && clearInterval(timeTicket);
-      timeTicket = setInterval(function() {
+      timeTicket = setInterval(function () {
         myChart.dispatchAction({
           type: "downplay",
-          seriesIndex: 1
+          seriesIndex: 1,
         });
         myChart.dispatchAction({
           type: "highlight",
           seriesIndex: 1,
-          dataIndex: count % dataLength
+          dataIndex: count % dataLength,
         });
         myChart.dispatchAction({
           type: "showTip",
           seriesIndex: 1,
-          dataIndex: count % dataLength
+          dataIndex: count % dataLength,
         });
         count++;
       }, 3000);
-      myChart.on("mouseover", function(params) {
+      myChart.on("mouseover", function (params) {
         clearInterval(timeTicket);
         myChart.dispatchAction({
           type: "downplay",
-          seriesIndex: 0
+          seriesIndex: 0,
         });
         myChart.dispatchAction({
           type: "highlight",
           seriesIndex: 0,
-          dataIndex: count % dataLength
+          dataIndex: count % dataLength,
         });
         myChart.dispatchAction({
           type: "showTip",
           seriesIndex: 0,
-          dataIndex: count % dataLength
+          dataIndex: count % dataLength,
         });
       });
-      myChart.on("mouseout", function(params) {
+      myChart.on("mouseout", function (params) {
         timeTicket && clearInterval(timeTicket);
-        timeTicket = setInterval(function() {
+        timeTicket = setInterval(function () {
           myChart.dispatchAction({
             type: "downplay",
-            seriesIndex: 1
+            seriesIndex: 1,
           });
           myChart.dispatchAction({
             type: "highlight",
             seriesIndex: 1,
-            dataIndex: count % dataLength
+            dataIndex: count % dataLength,
           });
           myChart.dispatchAction({
             type: "showTip",
             seriesIndex: 1,
-            dataIndex: count % dataLength
+            dataIndex: count % dataLength,
           });
           count++;
         }, 3000);
@@ -1090,11 +975,11 @@ export default {
         深圳: [114.062198, 22.549668],
         苏州: [120.678332, 31.321619],
         大连: [121.651314, 38.925283],
-        青岛: [120.473524, 36.105373]
+        青岛: [120.473524, 36.105373],
       };
       /*获取地图数据*/
       var mapFeatures = this.$echarts.getMap(mapName).geoJson.features;
-      mapFeatures.forEach(function(v) {
+      mapFeatures.forEach(function (v) {
         // 地区名称
         var name = v.properties.name;
         // 地区经纬度
@@ -1105,20 +990,20 @@ export default {
       var maxSize4Pin = 100,
         minSize4Pin = 20;
 
-      var convertData = function(dataJB) {
+      var convertData = function (dataJB) {
         var res = [];
         for (var i = 0; i < dataJB.length; i++) {
           var geoCoord = geoCoordMap[dataJB[i].name];
           if (geoCoord) {
             res.push({
               name: dataJB[i].name,
-              value: geoCoord.concat(dataJB[i].value)
+              value: geoCoord.concat(dataJB[i].value),
             });
           }
         }
         return res;
       };
-      var convertData1 = function(dataJB1) {
+      var convertData1 = function (dataJB1) {
         var res = [];
         for (var i = 0; i < dataJB1.length; i++) {
           var geoCoord = geoCoordMap[dataJB1[i].name];
@@ -1126,7 +1011,7 @@ export default {
             res.push({
               name: dataJB1[i].name,
               value: geoCoord.concat(dataJB1[i].value),
-              id: dataJB1[i].id
+              id: dataJB1[i].id,
             });
           }
         }
@@ -1136,7 +1021,7 @@ export default {
         {
           tooltip: {
             trigger: "item",
-            formatter: function(params) {
+            formatter: function (params) {
               if (typeof params.value[2] == "undefined") {
                 var toolTiphtml = "";
                 for (var i = 0; i < dataJB.length; i++) {
@@ -1156,7 +1041,7 @@ export default {
 
                 return toolTiphtml;
               }
-            }
+            },
           },
 
           visualMap: {
@@ -1164,7 +1049,7 @@ export default {
             itemHeight: this.setFontsize(0.9),
             textStyle: {
               color: "#fff",
-              show: false
+              show: false,
             },
             show: true,
             min: 0,
@@ -1175,8 +1060,8 @@ export default {
             calculable: true,
             seriesIndex: [1],
             inRange: {
-              color: ["#00467F", "#A5CC82"] // 蓝绿
-            }
+              color: ["#00467F", "#A5CC82"], // 蓝绿
+            },
           },
 
           geo: {
@@ -1185,22 +1070,22 @@ export default {
             map: mapName,
             label: {
               normal: {
-                show: false
+                show: false,
               },
               emphasis: {
-                show: false
-              }
+                show: false,
+              },
             },
             roam: true,
             itemStyle: {
               normal: {
                 areaColor: "#00467F",
-                borderColor: "#3B5077"
+                borderColor: "#3B5077",
               },
               emphasis: {
-                areaColor: "#FFD52E"
-              }
-            }
+                areaColor: "#FFD52E",
+              },
+            },
           },
 
           series: [
@@ -1210,7 +1095,7 @@ export default {
               type: "scatter",
               coordinateSystem: "geo",
               data: convertData1(dataJB1),
-              symbolSize: function(val) {
+              symbolSize: function (val) {
                 return val[2] / 20;
               },
               label: {
@@ -1218,17 +1103,17 @@ export default {
                   formatter: "{b}",
                   position: "right",
                   show: true,
-                  color: "#fff"
+                  color: "#fff",
                 },
                 emphasis: {
-                  show: true
-                }
+                  show: true,
+                },
               },
               itemStyle: {
                 normal: {
-                  color: "#05C3F9"
-                }
-              }
+                  color: "#05C3F9",
+                },
+              },
             },
             {
               type: "map",
@@ -1239,29 +1124,29 @@ export default {
               showLegendSymbol: false, // 存在legend时显示
               label: {
                 normal: {
-                  show: false
+                  show: false,
                 },
                 emphasis: {
                   show: false,
                   textStyle: {
-                    color: "#fff"
-                  }
-                }
+                    color: "#fff",
+                  },
+                },
               },
               roam: true,
               itemStyle: {
                 normal: {
                   areaColor: "#031525",
-                  borderColor: "#3B5077"
+                  borderColor: "#3B5077",
                 },
                 emphasis: {
-                  areaColor: "#fff"
-                }
+                  areaColor: "#fff",
+                },
               },
               animation: false,
-              data: dataJB
-            }
-          ]
+              data: dataJB,
+            },
+          ],
         },
         true
       );
@@ -1286,11 +1171,11 @@ export default {
           x: 50,
           x2: 50,
           top: "15%",
-          bottom: "15%" //也可设置left和right设置距离来控制图表的大小
+          bottom: "15%", //也可设置left和right设置距离来控制图表的大小
         },
         tooltip: {
           trigger: "axis",
-          formatter: function(params) {
+          formatter: function (params) {
             var html = params[0].name + "<br>";
             for (var i = 0; i < params.length; i++) {
               html +=
@@ -1300,90 +1185,90 @@ export default {
               html += params[i].seriesName + ":" + params[i].value + "<br>";
             }
             return html;
-          }
+          },
         },
         axisPointer: {
           type: "shadow",
           label: {
-            show: true
-          }
+            show: true,
+          },
         },
         legend: {
           data: that.box4PieData,
           top: "0%",
           textStyle: {
-            color: "#fff"
-          }
+            color: "#fff",
+          },
         },
         xAxis: {
           data: this.zhihanglist,
           axisLine: {
             show: true, //隐藏X轴轴线
             lineStyle: {
-              color: "#fff"
-            }
+              color: "#fff",
+            },
           },
           axisTick: {
-            show: true //隐藏X轴刻度
+            show: true, //隐藏X轴刻度
           },
           axisLabel: {
             show: true,
             interval: 0,
             rotate: 40,
             textStyle: {
-              color: "#fff" //X轴文字颜色
-            }
-          }
+              color: "#fff", //X轴文字颜色
+            },
+          },
         },
         yAxis: [
           {
             type: "value",
             name: " ",
             nameTextStyle: {
-              color: "#fff"
+              color: "#fff",
             },
             splitLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: true
+              show: true,
             },
             axisLine: {
               show: true,
               lineStyle: {
-                color: "#fff"
-              }
+                color: "#fff",
+              },
             },
             axisLabel: {
               textStyle: {
                 color: "#fff",
-                fontSize: this.setFontsize(0.12)
-              }
-            }
+                fontSize: this.setFontsize(0.12),
+              },
+            },
           },
           {
             type: "value",
             name: " ",
             nameTextStyle: {
-              color: "#fff"
+              color: "#fff",
             },
             position: "right",
             splitLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: true
+              show: true,
             },
             axisLine: {
-              show: true
+              show: true,
             },
             axisLabel: {
               formatter: "{value} %", //右侧Y轴文字显示
               textStyle: {
                 color: "#fff",
-                fontSize: this.setFontsize(0.12)
-              }
-            }
+                fontSize: this.setFontsize(0.12),
+              },
+            },
           },
           {
             type: "value",
@@ -1392,24 +1277,24 @@ export default {
             max: 100,
             splitNumber: 8,
             splitLine: {
-              show: false
+              show: false,
             },
             axisLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: false
+              show: false,
             },
             axisLabel: {
-              show: false
+              show: false,
             },
             splitArea: {
               show: true,
               areaStyle: {
-                color: ["rgba(250,250,250,0.0)", "rgba(250,250,250,0.05)"]
-              }
-            }
-          }
+                color: ["rgba(250,250,250,0.0)", "rgba(250,250,250,0.05)"],
+              },
+            },
+          },
         ],
         dataZoom: [
           {
@@ -1423,21 +1308,21 @@ export default {
               "path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z",
             handleSize: "110%",
             handleStyle: {
-              color: "#d3dee5"
+              color: "#d3dee5",
             },
             textStyle: {
               show: false,
-              color: "#fff"
+              color: "#fff",
             },
-            borderColor: "#90979c"
+            borderColor: "#90979c",
           },
           {
             type: "inside",
             show: true,
             height: 15,
             start: 1,
-            end: 35
-          }
+            end: 35,
+          },
         ],
         series: [
           {
@@ -1446,10 +1331,10 @@ export default {
             barWidth: this.setFontsize(0.15),
             itemStyle: {
               normal: {
-                color: "#388BFF"
-              }
+                color: "#388BFF",
+              },
             },
-            data: this.zsData
+            data: this.zsData,
           },
           {
             name: this.box4PieData[1],
@@ -1457,10 +1342,10 @@ export default {
             barWidth: this.setFontsize(0.15),
             itemStyle: {
               normal: {
-                color: "#F6931C"
-              }
+                color: "#F6931C",
+              },
             },
-            data: this.wclData
+            data: this.wclData,
           },
           {
             name: this.box4PieData[2],
@@ -1472,15 +1357,15 @@ export default {
             symbolSize: this.setFontsize(0.1), //标记的大小
             itemStyle: {
               //折线拐点标志的样式
-              color: "#FFCC67"
+              color: "#FFCC67",
             },
             lineStyle: {
-              color: "#FFCC67"
+              color: "#FFCC67",
             },
             data: this.wclvData,
-            valueType: "percent"
-          }
-        ]
+            valueType: "percent",
+          },
+        ],
       });
     },
     // 巡检切换的两个图单独请求
@@ -1867,13 +1752,13 @@ export default {
         "完成二个季度",
         "完成三个季度",
         "完成四个季度",
-        "未开展巡检"
+        "未开展巡检",
       ];
       PieXJyear.setOption({
         // color: ["#388BFF", "#E6A23C"],
         tooltip: {
           trigger: "axis",
-          formatter: function(params) {
+          formatter: function (params) {
             var html = params[0].name + "<br>";
             for (var i = 0; i < params.length; i++) {
               html +=
@@ -1886,8 +1771,8 @@ export default {
             return html;
           },
           textStyle: {
-            fontSize: 26
-          }
+            fontSize: 26,
+          },
         },
         // legend: {
         //   top: "6%",
@@ -1904,37 +1789,37 @@ export default {
           left: "4%",
           right: "0%",
           bottom: "22%",
-          containLabel: true
+          containLabel: true,
         },
         yAxis: {
           name: "占比(%)",
           triggerEvent: true,
           nameTextStyle: {
             color: "#fff",
-            fontSize: 26
+            fontSize: 26,
           },
           splitLine: {
             show: true,
             lineStyle: {
-              color: "rgba(255,255,255,.1)"
-            }
+              color: "rgba(255,255,255,.1)",
+            },
           },
           axisTick: {
-            show: false
+            show: false,
           },
           axisLine: {
             show: true,
             lineStyle: {
-              color: "rgba(255,255,255,.1)"
-            }
+              color: "rgba(255,255,255,.1)",
+            },
           },
           axisLabel: {
             show: true,
             textStyle: {
               color: "#fff",
-              fontSize: 24
-            }
-          }
+              fontSize: 24,
+            },
+          },
         },
         xAxis: [
           {
@@ -1945,11 +1830,11 @@ export default {
               splitNumber: 15,
               textStyle: {
                 fontSize: 20,
-                color: "#fff"
-              }
+                color: "#fff",
+              },
             },
-            data: datacity
-          }
+            data: datacity,
+          },
         ],
         series: [
           {
@@ -1958,9 +1843,9 @@ export default {
             color: "#1DB7E5",
             stack: "sum2",
             barWidth: this.setFontsize(0.4),
-            data: dataXC
-          }
-        ]
+            data: dataXC,
+          },
+        ],
       });
       //新巡检图
       PieXJ.setOption({
@@ -1968,7 +1853,7 @@ export default {
           x: 80,
           y: 50,
           x2: 140,
-          y2: 50
+          y2: 50,
         },
         legend: {
           data: ["现场", "远程", "专项"],
@@ -1976,50 +1861,50 @@ export default {
           right: "5%",
           textStyle: {
             color: "#fff",
-            fontSize: 24
-          }
+            fontSize: 24,
+          },
         },
         barWidth: 16,
         xAxis: {
           type: "value",
           splitLine: {
             lineStyle: {
-              color: "rgba(255,255,255,0.2)"
-            }
+              color: "rgba(255,255,255,0.2)",
+            },
           },
           axisTick: {
-            show: false
+            show: false,
           },
           axisLine: {
             show: false,
             //  改变x轴颜色
             lineStyle: {
-              color: "#26D9FF"
-            }
+              color: "#26D9FF",
+            },
           },
           axisLabel: {
             show: false,
             //  改变x轴字体颜色和大小
             textStyle: {
               color: "#fff",
-              fontSize: 24
-            }
-          }
+              fontSize: 24,
+            },
+          },
         },
         yAxis: {
           type: "category",
           data: ["现场", "远程", "专项"],
           splitLine: {
-            show: false
+            show: false,
           },
           axisTick: {
-            show: false
+            show: false,
           },
           axisLine: {
             //  改变y轴颜色
             lineStyle: {
-              color: "#26D9FF"
-            }
+              color: "#26D9FF",
+            },
           },
           axisLabel: {
             //  改变y轴字体颜色和大小
@@ -2027,9 +1912,9 @@ export default {
             show: false,
             textStyle: {
               color: "#fff",
-              fontSize: 24
-            }
-          }
+              fontSize: 24,
+            },
+          },
         },
         series: [
           {
@@ -2039,20 +1924,20 @@ export default {
               normal: {
                 label: {
                   show: true, //开启显示
-                  formatter: function(data) {
+                  formatter: function (data) {
                     return "总数:" + data.value + "个";
                   },
                   position: "right", //在上方显示
                   textStyle: {
                     //数值样式
                     color: "#fff",
-                    fontSize: 24
-                  }
+                    fontSize: 24,
+                  },
                 },
-                color: "#1DB7E5"
-              }
+                color: "#1DB7E5",
+              },
             },
-            data: [28, ,]
+            data: [28, ,],
           },
           {
             type: "bar",
@@ -2061,20 +1946,20 @@ export default {
               normal: {
                 label: {
                   show: true, //开启显示
-                  formatter: function(data) {
+                  formatter: function (data) {
                     return "完成数:" + data.value + "个";
                   },
                   position: "right", //在上方显示
                   textStyle: {
                     //数值样式
                     color: "#fff",
-                    fontSize: 24
-                  }
+                    fontSize: 24,
+                  },
                 },
-                color: "#1DB7E5"
-              }
+                color: "#1DB7E5",
+              },
             },
-            data: [10, ,]
+            data: [10, ,],
           },
           {
             type: "bar",
@@ -2083,20 +1968,20 @@ export default {
               normal: {
                 label: {
                   show: true, //开启显示
-                  formatter: function(data) {
+                  formatter: function (data) {
                     return "总数:" + data.value + "个";
                   },
                   position: "right", //在上方显示
                   textStyle: {
                     //数值样式
                     color: "#fff",
-                    fontSize: 24
-                  }
+                    fontSize: 24,
+                  },
                 },
-                color: "#F94E4E"
-              }
+                color: "#F94E4E",
+              },
             },
-            data: [, 12]
+            data: [, 12],
           },
           {
             type: "bar",
@@ -2105,20 +1990,20 @@ export default {
               normal: {
                 label: {
                   show: true, //开启显示
-                  formatter: function(data) {
+                  formatter: function (data) {
                     return "完成数:" + data.value + "个";
                   },
                   position: "right", //在上方显示
                   textStyle: {
                     //数值样式
                     color: "#fff",
-                    fontSize: 24
-                  }
+                    fontSize: 24,
+                  },
                 },
-                color: "#F94E4E"
-              }
+                color: "#F94E4E",
+              },
             },
-            data: [, 9]
+            data: [, 9],
           },
           {
             type: "bar",
@@ -2127,20 +2012,20 @@ export default {
               normal: {
                 label: {
                   show: true, //开启显示
-                  formatter: function(data) {
+                  formatter: function (data) {
                     return "总数:" + data.value + "个";
                   },
                   position: "right", //在上方显示
                   textStyle: {
                     //数值样式
                     color: "#fff",
-                    fontSize: 24
-                  }
+                    fontSize: 24,
+                  },
                 },
-                color: "#FFD52E"
-              }
+                color: "#FFD52E",
+              },
             },
-            data: [, , 9]
+            data: [, , 9],
           },
           {
             type: "bar",
@@ -2149,22 +2034,22 @@ export default {
               normal: {
                 label: {
                   show: true, //开启显示
-                  formatter: function(data) {
+                  formatter: function (data) {
                     return "完成数:" + data.value + "个";
                   },
                   position: "right", //在上方显示
                   textStyle: {
                     //数值样式
                     color: "#fff",
-                    fontSize: 24
-                  }
+                    fontSize: 24,
+                  },
                 },
-                color: "#FFD52E"
-              }
+                color: "#FFD52E",
+              },
             },
-            data: [, , 10]
-          }
-        ]
+            data: [, , 10],
+          },
+        ],
       });
       // 支行柱状图+折线图
       var that = this;
@@ -2173,11 +2058,11 @@ export default {
           x: 50,
           x2: 50,
           top: "20%",
-          bottom: "15%" //也可设置left和right设置距离来控制图表的大小
+          bottom: "15%", //也可设置left和right设置距离来控制图表的大小
         },
         tooltip: {
           trigger: "axis",
-          formatter: function(params) {
+          formatter: function (params) {
             var html = params[0].name + "<br>";
             for (var i = 0; i < params.length; i++) {
               html +=
@@ -2187,91 +2072,91 @@ export default {
               html += params[i].seriesName + ":" + params[i].value + "<br>";
             }
             return html;
-          }
+          },
         },
         axisPointer: {
           type: "shadow",
           label: {
-            show: true
-          }
+            show: true,
+          },
         },
         legend: {
           data: that.box4PieData,
           top: "0%",
           textStyle: {
             color: "#fff",
-            fontSize: 16
-          }
+            fontSize: 16,
+          },
         },
         xAxis: {
           data: this.zhihanglist,
           axisLine: {
             show: true, //隐藏X轴轴线
             lineStyle: {
-              color: "#fff"
-            }
+              color: "#fff",
+            },
           },
           axisTick: {
-            show: true //隐藏X轴刻度
+            show: true, //隐藏X轴刻度
           },
           axisLabel: {
             show: true,
             textStyle: {
               color: "#fff", //X轴文字颜色
-              fontSize: 14
-            }
-          }
+              fontSize: 14,
+            },
+          },
         },
         yAxis: [
           {
             type: "value",
             name: "",
             nameTextStyle: {
-              color: "#fff"
+              color: "#fff",
             },
             splitLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: true
+              show: true,
             },
             axisLine: {
               show: true,
               lineStyle: {
-                color: "#fff"
-              }
+                color: "#fff",
+              },
             },
             axisLabel: {
               textStyle: {
                 color: "#fff",
-                fontSize: 14
-              }
-            }
+                fontSize: 14,
+              },
+            },
           },
           {
             type: "value",
             name: "",
             nameTextStyle: {
-              color: "#fff"
+              color: "#fff",
             },
             position: "right",
             splitLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: true
+              show: true,
             },
             axisLine: {
-              show: true
+              show: true,
             },
             axisLabel: {
               show: true,
               formatter: "{value} %", //右侧Y轴文字显示
               textStyle: {
                 color: "#fff",
-                fontSize: 14
-              }
-            }
+                fontSize: 14,
+              },
+            },
           },
           {
             type: "value",
@@ -2280,24 +2165,24 @@ export default {
             max: 100,
             splitNumber: 8,
             splitLine: {
-              show: false
+              show: false,
             },
             axisLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: false
+              show: false,
             },
             axisLabel: {
-              show: false
+              show: false,
             },
             splitArea: {
               show: true,
               areaStyle: {
-                color: ["rgba(250,250,250,0.0)", "rgba(250,250,250,0.05)"]
-              }
-            }
-          }
+                color: ["rgba(250,250,250,0.0)", "rgba(250,250,250,0.05)"],
+              },
+            },
+          },
         ],
         dataZoom: [
           {
@@ -2311,20 +2196,20 @@ export default {
               "path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z",
             handleSize: "110%",
             handleStyle: {
-              color: "#d3dee5"
+              color: "#d3dee5",
             },
             textStyle: {
-              color: "#fff"
+              color: "#fff",
             },
-            borderColor: "#90979c"
+            borderColor: "#90979c",
           },
           {
             type: "inside",
             show: false,
             height: 15,
             start: 1,
-            end: 35
-          }
+            end: 35,
+          },
         ],
         series: [
           {
@@ -2333,10 +2218,10 @@ export default {
             barWidth: 18,
             itemStyle: {
               normal: {
-                color: "#388BFF"
-              }
+                color: "#388BFF",
+              },
             },
-            data: this.zsData
+            data: this.zsData,
           },
           {
             name: this.box4PieData[1],
@@ -2344,10 +2229,10 @@ export default {
             barWidth: 18,
             itemStyle: {
               normal: {
-                color: "#F6931C"
-              }
+                color: "#F6931C",
+              },
             },
-            data: this.wclData
+            data: this.wclData,
           },
           {
             name: this.box4PieData[2],
@@ -2359,20 +2244,20 @@ export default {
             symbolSize: this.setFontsize(0.1), //标记的大小
             itemStyle: {
               //折线拐点标志的样式
-              color: "#FFCC67"
+              color: "#FFCC67",
             },
             lineStyle: {
-              color: "#FFCC67"
+              color: "#FFCC67",
             },
             data: this.wclvData,
-            valueType: "percent"
-          }
-        ]
+            valueType: "percent",
+          },
+        ],
       });
       // 预警柱状图
       let dataYJ = this.fxyjData;
       let dataYJ1 = this.fxyjData1;
-      let label = dataYJ.map(item => {
+      let label = dataYJ.map((item) => {
         return [item.name, item.color];
       });
       let lineColor = "rgba(255,255,255,0.2)";
@@ -2380,13 +2265,13 @@ export default {
         {
           borderColor: "rgba(0, 183, 238,1)",
           start: "rgba(0, 183, 238,0.3)",
-          end: "rgba(0, 183, 238,0.9)"
+          end: "rgba(0, 183, 238,0.9)",
         },
         {
           borderColor: "rgba(235, 204, 123,1)",
           start: "rgba(235, 204, 123,0.9)",
-          end: "rgba(235, 204, 123,0.3)"
-        }
+          end: "rgba(235, 204, 123,0.3)",
+        },
       ];
       var _this = this;
       yjPie.setOption({
@@ -2394,15 +2279,15 @@ export default {
           type: "inside",
           start: 0,
           end: 100,
-          yAxisIndex: [0]
+          yAxisIndex: [0],
         },
         tooltip: {
           show: false,
           trigger: "axis",
           axisPointer: {
             // 坐标轴指示器，坐标轴触发有效
-            type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
-          }
+            type: "shadow", // 默认为直线，可选为：'line' | 'shadow'
+          },
         },
         legend: {
           show: true,
@@ -2415,9 +2300,9 @@ export default {
           // left: "center",
           textStyle: {
             fontSize: 32,
-            color: "#F1F1F3"
+            color: "#F1F1F3",
           },
-          data: ["已处理", "未处理"]
+          data: ["已处理", "未处理"],
         },
         grid: [
           {
@@ -2426,14 +2311,14 @@ export default {
             top: 30,
             bottom: 10,
             containLabel: true,
-            width: "28%"
+            width: "28%",
           },
           {
             show: false,
             left: "51.5%", //调整中间文字位置
             top: 26,
             bottom: 10,
-            width: "20%"
+            width: "20%",
           },
           {
             show: false,
@@ -2441,55 +2326,55 @@ export default {
             top: 30,
             bottom: 10,
             containLabel: true,
-            width: "28%"
-          }
+            width: "28%",
+          },
         ],
         xAxis: [
           {
             type: "value",
             inverse: true,
             axisLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: false
+              show: false,
             },
             position: "top",
             axisLabel: {
               show: false,
-              color: "#fff"
+              color: "#fff",
             },
             splitLine: {
               show: true,
               lineStyle: {
-                color: lineColor
-              }
-            }
+                color: lineColor,
+              },
+            },
           },
           {
             gridIndex: 1,
-            show: false
+            show: false,
           },
           {
             gridIndex: 2,
             axisLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: false
+              show: false,
             },
             position: "top",
             axisLabel: {
               show: false,
-              color: "#fff"
+              color: "#fff",
             },
             splitLine: {
               show: true,
               lineStyle: {
-                color: lineColor
-              }
-            }
-          }
+                color: lineColor,
+              },
+            },
+          },
         ],
         yAxis: [
           {
@@ -2499,17 +2384,17 @@ export default {
             axisLine: {
               show: false,
               lineStyle: {
-                color: lineColor
-              }
+                color: lineColor,
+              },
             },
 
             axisTick: {
-              show: false
+              show: false,
             },
             axisLabel: {
-              show: false
+              show: false,
             },
-            data: label
+            data: label,
           },
           {
             gridIndex: 1,
@@ -2517,28 +2402,28 @@ export default {
             inverse: true,
             position: "left",
             axisLine: {
-              show: false
+              show: false,
             },
             axisTick: {
-              show: false
+              show: false,
             },
             axisLabel: {
               show: true,
               textStyle: {
                 color: "#ffffff",
-                fontSize: 26
-              }
+                fontSize: 26,
+              },
             },
-            data: label.map(value => {
+            data: label.map((value) => {
               return {
                 value: value[0],
                 textStyle: {
                   align: "center",
                   color: value[1],
-                  fontSize: 32
-                }
+                  fontSize: 32,
+                },
               };
-            })
+            }),
           },
           {
             gridIndex: 2,
@@ -2548,17 +2433,17 @@ export default {
             axisLine: {
               show: false,
               lineStyle: {
-                color: lineColor
-              }
+                color: lineColor,
+              },
             },
             axisTick: {
-              show: false
+              show: false,
             },
             axisLabel: {
-              show: false
+              show: false,
             },
-            data: label
-          }
+            data: label,
+          },
         ],
         series: [
           {
@@ -2572,17 +2457,17 @@ export default {
               distance: 5,
               color: "#fff",
               position: "left", //inside|right
-              formatter: params => {
+              formatter: (params) => {
                 return params.value + "%";
-              }
+              },
             },
             itemStyle: {
               normal: {
-                color: "#02C81A"
+                color: "#02C81A",
                 // color:colors[0].borderColor
-              }
+              },
             },
-            data: dataYJ
+            data: dataYJ,
           },
           {
             name: "未处理",
@@ -2597,18 +2482,18 @@ export default {
               distance: 5,
               color: "#fff",
               position: "right", //inside|right
-              formatter: params => {
+              formatter: (params) => {
                 return params.value + "%";
-              }
+              },
             },
             itemStyle: {
               normal: {
-                color: "#FFD52E"
-              }
+                color: "#FFD52E",
+              },
             },
-            data: dataYJ1
-          }
-        ]
+            data: dataYJ1,
+          },
+        ],
       });
       // 仪表盘
       ybpPie.setOption({
@@ -2628,12 +2513,12 @@ export default {
                 color: [
                   [0.1, "#ff4500"],
                   [0.8, "#4EE3FF"],
-                  [1, "lime"]
+                  [1, "lime"],
                 ],
                 width: 3,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 6
-              }
+                shadowBlur: 6,
+              },
             },
             axisLabel: {
               // 坐标轴小标记
@@ -2643,8 +2528,8 @@ export default {
                 color: "#fff",
                 //shadowColor : '#fff', //默认透明
                 shadowBlur: 5,
-                fontSize: 20
-              }
+                fontSize: 20,
+              },
             },
             axisTick: {
               // 坐标轴小标记
@@ -2654,38 +2539,38 @@ export default {
                 color: "auto",
                 width: 1,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 5
-              }
+                shadowBlur: 5,
+              },
             },
             splitLine: {
               //橙色分割线
               length: 18,
               lineStyle: {
                 width: 4,
-                color: "#FCD209"
-              }
+                color: "#FCD209",
+              },
             },
             itemStyle: {
               //指针颜色
-              color: "#1e90ff"
+              color: "#1e90ff",
             },
             pointer: {
               //指针长短
               length: 65,
-              width: 7
+              width: 7,
             },
             detail: {
               formatter: "{value}%",
               textStyle: {
-                fontSize: 40
-              }
+                fontSize: 40,
+              },
             },
             data: [
               {
                 value: this.zrtglData,
-                name: "123"
-              }
-            ]
+                name: "123",
+              },
+            ],
           },
           {
             name: "速度",
@@ -2702,12 +2587,12 @@ export default {
                 color: [
                   [0.1, "#ff4500"],
                   [0.8, "#4EE3FF"],
-                  [1, "lime"]
+                  [1, "lime"],
                 ],
                 width: 3,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 6
-              }
+                shadowBlur: 6,
+              },
             },
             axisLabel: {
               // 坐标轴小标记
@@ -2717,8 +2602,8 @@ export default {
                 color: "#fff",
                 //shadowColor : '#fff', //默认透明
                 shadowBlur: 5,
-                fontSize: 20
-              }
+                fontSize: 20,
+              },
             },
             axisTick: {
               // 坐标轴小标记
@@ -2728,33 +2613,33 @@ export default {
                 color: "auto",
                 width: 1,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 5
-              }
+                shadowBlur: 5,
+              },
             },
             splitLine: {
               //橙色分割线
               length: 18,
               lineStyle: {
                 width: 4,
-                color: "#FCD209"
-              }
+                color: "#FCD209",
+              },
             },
             itemStyle: {
               //指针颜色
-              color: "#1e90ff"
+              color: "#1e90ff",
             },
             pointer: {
               //指针长短
               length: 65,
-              width: 7
+              width: 7,
             },
             detail: {
               formatter: "{value}%",
               textStyle: {
-                fontSize: 40
-              }
+                fontSize: 40,
+              },
             },
-            data: [{ value: this.cldxlData }]
+            data: [{ value: this.cldxlData }],
           },
           {
             name: "速度",
@@ -2771,12 +2656,12 @@ export default {
                 color: [
                   [0.1, "#ff4500"],
                   [0.8, "#4EE3FF"],
-                  [1, "lime"]
+                  [1, "lime"],
                 ],
                 width: 3,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 6
-              }
+                shadowBlur: 6,
+              },
             },
             axisLabel: {
               // 坐标轴小标记
@@ -2786,8 +2671,8 @@ export default {
                 color: "#fff",
                 //shadowColor : '#fff', //默认透明
                 shadowBlur: 5,
-                fontSize: 20
-              }
+                fontSize: 20,
+              },
             },
             axisTick: {
               // 坐标轴小标记
@@ -2797,33 +2682,33 @@ export default {
                 color: "auto",
                 width: 1,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 5
-              }
+                shadowBlur: 5,
+              },
             },
             splitLine: {
               //橙色分割线
               length: 18,
               lineStyle: {
                 width: 4,
-                color: "#FCD209"
-              }
+                color: "#FCD209",
+              },
             },
             itemStyle: {
               //指针颜色
-              color: "#1e90ff"
+              color: "#1e90ff",
             },
             pointer: {
               //指针长短
               length: 65,
-              width: 7
+              width: 7,
             },
             detail: {
               formatter: "{value}%",
               textStyle: {
-                fontSize: 40
-              }
+                fontSize: 40,
+              },
             },
-            data: [{ value: this.yjczlData }]
+            data: [{ value: this.yjczlData }],
           },
           {
             name: "速度",
@@ -2840,12 +2725,12 @@ export default {
                 color: [
                   [0.1, "#ff4500"],
                   [0.8, "#4EE3FF"],
-                  [1, "lime"]
+                  [1, "lime"],
                 ],
                 width: 3,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 6
-              }
+                shadowBlur: 6,
+              },
             },
             axisLabel: {
               // 坐标轴小标记
@@ -2855,8 +2740,8 @@ export default {
                 color: "#fff",
                 //shadowColor : '#fff', //默认透明
                 shadowBlur: 5,
-                fontSize: 20
-              }
+                fontSize: 20,
+              },
             },
             axisTick: {
               // 坐标轴小标记
@@ -2866,35 +2751,35 @@ export default {
                 color: "auto",
                 width: 1,
                 //shadowColor : '#fff', //默认透明
-                shadowBlur: 5
-              }
+                shadowBlur: 5,
+              },
             },
             splitLine: {
               //橙色分割线
               length: 18,
               lineStyle: {
                 width: 4,
-                color: "#FCD209"
-              }
+                color: "#FCD209",
+              },
             },
             itemStyle: {
               //指针颜色
-              color: "#1e90ff"
+              color: "#1e90ff",
             },
             pointer: {
               //指针长短
               length: 65,
-              width: 7
+              width: 7,
             },
             detail: {
               formatter: "{value}%",
               textStyle: {
-                fontSize: 40
-              }
+                fontSize: 40,
+              },
             },
-            data: [{ value: this.xjtglData }]
-          }
-        ]
+            data: [{ value: this.xjtglData }],
+          },
+        ],
       });
       // 准入拒件饼图
       var seriesData = this.zrData;
@@ -2905,9 +2790,17 @@ export default {
         "与业主身份不相符",
         "已列入内部黑名单",
         "已列入外部黑名单",
-        "其他存在风险事项"
+        "其他存在风险事项",
       ];
-      var colorList1 = ["#73ACFF", "#9E87FF", "#FD866A", "#FDD56A","#52AF52","#F41010","#9F9F9F"];
+      var colorList1 = [
+        "#73ACFF",
+        "#9E87FF",
+        "#FD866A",
+        "#FDD56A",
+        "#52AF52",
+        "#F41010",
+        "#9F9F9F",
+      ];
       zrPie.setOption({
         tooltip: {
           trigger: "item",
@@ -2916,9 +2809,9 @@ export default {
           borderWidth: 1,
           padding: 5,
           textStyle: {
-            fontSize: 30
+            fontSize: 30,
           },
-          formatter: function(parms) {
+          formatter: function (parms) {
             var str =
               parms.marker +
               "" +
@@ -2931,7 +2824,7 @@ export default {
               parms.percent +
               "%";
             return str;
-          }
+          },
         },
         legend: {
           type: "scroll",
@@ -2943,9 +2836,9 @@ export default {
           itemHeight: 15,
           textStyle: {
             color: "#fff",
-            fontSize: 28
+            fontSize: 28,
           },
-          data: legendData
+          data: legendData,
         },
         series: [
           {
@@ -2958,10 +2851,10 @@ export default {
             hoverOffset: this.setFontsize(0.07),
             itemStyle: {
               normal: {
-                color: function(params) {
+                color: function (params) {
                   return colorList1[params.dataIndex];
-                }
-              }
+                },
+              },
             },
             label: {
               fontSize: 32,
@@ -2970,25 +2863,25 @@ export default {
               formatter: "{d}%\n{hr|}",
               rich: {
                 a: {
-                  padding: [-30, 15, -20, 15]
-                }
-              }
+                  padding: [-30, 15, -20, 15],
+                },
+              },
             },
             labelLine: {
               normal: {
                 length: 10,
                 length2: 15,
                 lineStyle: {
-                  width: 1
-                }
-              }
+                  width: 1,
+                },
+              },
             },
-            data: seriesData
-          }
-        ]
+            data: seriesData,
+          },
+        ],
       });
       //
-      
+
       this.$nextTick(() => {
         PieXJ.resize();
       });
@@ -3266,10 +3159,10 @@ export default {
       //     }
       //   ]
       // });
-      window.addEventListener("resize", function() {
+      window.addEventListener("resize", function () {
         PieXJ.resize();
       });
-      window.addEventListener("resize", function() {
+      window.addEventListener("resize", function () {
         PieXJyear.resize();
       });
       // 风险处置
@@ -3282,69 +3175,69 @@ export default {
           data: ["风险级", "警示级", "预警级", "关注级"],
           textStyle: {
             color: "#fff",
-            fontSize: 26
-          }
+            fontSize: 26,
+          },
         },
         tooltip: {
           trigger: "axis",
           textStyle: {
-            fontSize: 26
-          }
+            fontSize: 26,
+          },
         },
         grid: {
           left: "5%",
           right: "3%",
           bottom: "0%",
           top: "28%",
-          containLabel: true
+          containLabel: true,
         },
         xAxis: {
           data: xdata,
           triggerEvent: true,
           axisTick: {
-            show: false
+            show: false,
           },
           axisLine: {
-            show: false
+            show: false,
           },
           axisLabel: {
             show: true,
             interval: 0,
             textStyle: {
               color: "#fff",
-              fontSize: 22
-            }
-          }
+              fontSize: 22,
+            },
+          },
         },
         yAxis: {
           name: "总数(个)",
           triggerEvent: true,
           nameTextStyle: {
             color: "#fff",
-            fontSize: 20
+            fontSize: 20,
           },
           splitLine: {
             show: true,
             lineStyle: {
-              color: "rgba(255,255,255,.1)"
-            }
+              color: "rgba(255,255,255,.1)",
+            },
           },
           axisTick: {
-            show: false
+            show: false,
           },
           axisLine: {
             show: true,
             lineStyle: {
-              color: "rgba(255,255,255,.1)"
-            }
+              color: "rgba(255,255,255,.1)",
+            },
           },
           axisLabel: {
             show: true,
             textStyle: {
               color: "#fff",
-              fontSize: 18
-            }
-          }
+              fontSize: 18,
+            },
+          },
         },
         // color: ["#e54035"],
         series: [
@@ -3361,7 +3254,7 @@ export default {
               normal: {
                 //barBorderRadius: 5,
                 //渐变色
-                color: function(params) {
+                color: function (params) {
                   return jztColor[params.dataIndex];
                 },
                 label: {
@@ -3369,15 +3262,15 @@ export default {
                   position: "top",
                   textStyle: {
                     fontSize: 24,
-                    color: "#fff"
-                  }
-                }
-              }
+                    color: "#fff",
+                  },
+                },
+              },
             },
             data: data,
-            z: 10
-          }
-        ]
+            z: 10,
+          },
+        ],
       });
 
       var colorList = [
@@ -3387,7 +3280,7 @@ export default {
         "#FDB36A",
         "#FD866A",
         "#9E87FF",
-        "#58D5FF"
+        "#58D5FF",
       ];
       // Pie1.setOption({
       //   backgroundColor: "",
@@ -3480,7 +3373,7 @@ export default {
       this.$store.dispatch("user/logout").then(() => {
         this.$router.push(`/login?redirect=${this.$route.fullPath}`);
       });
-    }
+    },
   },
   mounted() {
     this.currentTime();
@@ -3501,20 +3394,20 @@ export default {
     this.options1 = [
       {
         value: "选项0",
-        label: toYear
+        label: toYear,
       },
       {
         value: "选项1",
-        label: toYear1
+        label: toYear1,
       },
       {
         value: "选项2",
-        label: toYear
+        label: toYear,
       },
       {
         value: "选项3",
-        label: toYear
-      }
+        label: toYear,
+      },
     ];
     this.getData();
     // console.log(this.setFontsize(0.3), "1111");
@@ -3522,27 +3415,27 @@ export default {
     // box4Pie数据
     var rows = [
       {
-        IND: "北京,560,340"
+        IND: "北京,560,340",
       },
       {
-        IND: "天津,539,260"
-      }
+        IND: "天津,539,260",
+      },
     ];
     var newRow = [];
-    rows.map(item => {
+    rows.map((item) => {
       var newData = item.IND;
       var result = newData.split(",");
       newRow.push({
         name: result[0],
         value1: result[1],
-        value2: result[2]
+        value2: result[2],
       });
     });
     console.log(newRow, "123456");
     var itemName = [];
     var itemValue1 = [];
     var itemValue2 = [];
-    newRow.map(item => {
+    newRow.map((item) => {
       itemName.push(item.name);
       itemValue1.push(parseInt(item.value1));
       itemValue2.push(parseInt(item.value2));
@@ -3554,18 +3447,18 @@ export default {
     var yhData = [
       {
         name: "aaa",
-        value: "2"
+        value: "2",
       },
       {
         name: "bbb",
-        value: "8"
+        value: "8",
       },
       {
         name: "ccc",
-        value: "5"
-      }
+        value: "5",
+      },
     ];
-    yhData.sort(function(a, b) {
+    yhData.sort(function (a, b) {
       if (a.value > b.value) {
         return -1;
       } else if (a.value < b.value) {
@@ -3577,7 +3470,7 @@ export default {
     for (var i = 0; i < yhData.length; i++) {
       newyhData.push({
         name: yhData[i].name,
-        value: yhData[i].value
+        value: yhData[i].value,
       });
     }
     console.log(newyhData);
@@ -3654,12 +3547,12 @@ export default {
     JSON.parse("[" + shuzi111 + "]");
     console.log(shuzi111);
   },
-  beforeDestroy: function() {
+  beforeDestroy: function () {
     if (this.getDate) {
       console.log("销毁定时器");
       clearInterval(this.getDate); // 在Vue实例销毁前，清除时间定时器
     }
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -3912,10 +3805,10 @@ ul {
   // user-select: none;
   display: flex;
   flex-direction: row;
-  background-image: url("../../assets/img/demo2bg.jpg");
   background-size: 100vw 100vh;
   background-position: center;
   background-repeat: no-repeat;
+  background: url("../../assets/img/bg.jpg") rgb(0, 6, 91);
   padding: 3%;
   position: relative;
   .box1 {
