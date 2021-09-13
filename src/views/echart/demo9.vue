@@ -1,70 +1,64 @@
 <template>
   <div class="bg">
     <div class="title_time">
-      <p class="tit">债券市场风险视图</p>
+      <p class="tit">债券市场存量概览</p>
       <p class="time">{{ nowDate + " " + nowTime + " " + nowWeek }}</p>
     </div>
     <div class="box1">
       <div class="mod1">
-        <p class="title">债券市场违约风险指数</p>
+        <!-- <div class="selectBox">
+          <el-select class="ccbSelect" v-model="valueSelect" placeholder="请选择" @change="getJGH">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </div>-->
+        <p class="title">信用债总量变化</p>
         <div class="pie1" id="pie1"></div>
       </div>
       <div class="mod2">
-        <div class="selectBox">
-          <el-select class="ccbSelect" v-model="selectPie1" placeholder="请选择" @change="getJGHpie1">
-            <el-option
-              v-for="item in optionsPie1"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </div>
-        <p class="title">债券市场违约风险指数（行业）</p>
+        <p class="title">信用债到期情况</p>
         <div class="pie2" id="pie2"></div>
       </div>
       <div class="mod2 mod2_1">
-        <div class="selectBox">
-          <el-select class="ccbSelect" v-model="selectPie2" placeholder="请选择" @change="getJGHpie2">
-            <el-option
-              v-for="item in optionsPie2"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </div>
-        <p class="title">债券市场违约风险指数（省份）</p>
+        <p class="title">信用债发行情况</p>
         <div class="pie3" id="pie3"></div>
       </div>
     </div>
     <div class="box2">
       <div class="modBox1">
+        <div class="modBox1_tit">
+          <p class="p1">存量规模</p>
+          <p class="p2">100,000,000,000,000.00</p>
+        </div>
         <ul class="modBox1_ul">
           <li>
             <div class="txtBox1 c1">
-              <p class="tit c1">关注债券发行体数目</p>
+              <p class="tit c1">利率债</p>
               <p class="txt">
-                <span>70</span> /
-                <span>2000</span>
+                <span>50.00</span>
+                <span>万亿</span>
               </p>
             </div>
           </li>
           <li>
             <div class="txtBox1 c2">
-              <p class="tit c2">关注债券数目</p>
+              <p class="tit c2">地方债</p>
               <p class="txt">
-                <span>333</span> /
-                <span>8000</span>
+                <span>30.00</span>
+                <span>万亿</span>
               </p>
             </div>
           </li>
           <li>
             <div class="txtBox1 c3">
-              <p class="tit c3">关注债券规模（万亿）</p>
+              <p class="tit c3">信用债</p>
               <p class="txt">
-                <span>0.8</span> /
-                <span>41.2</span>
+                <span>40.00</span>
+                <span>万亿</span>
               </p>
             </div>
           </li>
@@ -72,31 +66,56 @@
         <div class="pie4" id="pie4"></div>
       </div>
       <div class="modBox2">
-        <div class="map1" id="map1"></div>
+        <p class="title">信用债利差变化（AAA）</p>
+        <div class="pie8" id="pie8"></div>
       </div>
     </div>
     <div class="box3">
       <div class="modr1">
-        <p class="title">关注企业类型分布</p>
-        <div class="selectBox sel">
-          <el-select class="ccbSelect" v-model="selectPie3" placeholder="请选择" @change="hyChange">
+        <div class="selectBox">
+          <el-select class="ccbSelect" v-model="selectPie5" placeholder="请选择" @change="getJGHpie5">
             <el-option
-              v-for="item in optionsPie3"
+              v-for="item in optionsPie5"
               :key="item.value"
               :label="item.label"
               :value="item.value"
             ></el-option>
           </el-select>
-          <p class="time">请选择时间：</p>
         </div>
+        <p class="title">信用债行业分布</p>
         <div class="pie5" id="pie5"></div>
       </div>
       <div class="modr2">
-        <p class="title">关注企业评级分布</p>
-        <div class="pie6" id="pie6"></div>
+        <div class="selectBox">
+          <el-select class="ccbSelect" v-model="selectPie6" placeholder="请选择" @change="getJGHpie6">
+            <el-option
+              v-for="item in optionsPie6"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
+        </div>
+        <p class="title">已违约信用债概览</p>
+        <!-- <div class="pie6" id="pie6"></div> -->
+        <ul class="box3_modr2_ul">
+          <li>
+            <p class="p1">已违约发行体数目：</p>
+            <p class="p2">199</p>
+          </li>
+          <li>
+            <p class="p1">已违约债券数目：</p>
+            <p class="p2">199</p>
+          </li>
+          <li>
+            <p class="p1">已违约债券规模：</p>
+            <p class="p2">199</p>
+            <p class="p3">亿元</p>
+          </li>
+        </ul>
       </div>
       <div class="modr3">
-        <p class="title">关注企业行业分布</p>
+        <p class="title">月度违约及发行体统计</p>
         <div class="pie7" id="pie7"></div>
       </div>
     </div>
@@ -106,87 +125,36 @@
 import "echarts/map/js/china.js";
 import "echarts-liquidfill/src/liquidFill.js";
 export default {
-  name: "demo8",
+  name: "demo9",
   data() {
     return {
       //默认参数
       nowDate: "", // 当前日期
       nowTime: "", // 当前时间
       nowWeek: "", // 当前星期
-      selectPie1: "0", //行业
-      selectPie2: "0", //省份
-      selectPie3: "0", //关注企业
-      dataRight1: [1, 2, 3, 4, 5, 6], //右侧三组数据
-      dataRight2: [1, 2, 3, 4, 5, 6, 7, 8], //右侧三组数据
-      dataRight3: [8, 7, 6, 5, 4, 3, 2, 1], //右侧三组数据
-      dataPie5: [
-        //图三数据
-        56.3,
-        56.4,
-        57.5,
-        55.6,
-        86.1,
-        84.8,
-        79.6,
-        84.1,
-        70.1,
-        42.4,
-        65.8,
-        84.7
-      ], //图三数据
-      dataPie2: [
-        56.3,
-        56.4,
-        57.5,
-        55.6,
-        86.1,
-        84.8,
-        79.6,
-        84.1,
-        70.1,
-        42.4,
-        65.8,
-        84.7
-      ], //图二数据
-      optionsPie1: [
+      selectPie5: "0",
+      selectPie6: "0",
+      optionsPie5: [
         {
-          label: "建筑",
+          label: "行业",
           value: "0"
         },
         {
-          label: "能源",
+          label: "评级",
           value: "1"
-        },
-        {
-          label: "可选消费",
-          value: "2"
         }
       ],
-      optionsPie2: [
+      optionsPie6: [
         {
-          label: "福建",
+          label: "概览",
           value: "0"
         },
         {
-          label: "上海",
+          label: "行业",
           value: "1"
         },
         {
-          label: "江西",
-          value: "2"
-        }
-      ],
-      optionsPie3: [
-        {
-          label: "2020Q1",
-          value: "0"
-        },
-        {
-          label: "2020Q2",
-          value: "1"
-        },
-        {
-          label: "2020Q3",
+          label: "区域",
           value: "2"
         }
       ]
@@ -194,65 +162,6 @@ export default {
   },
   computed: {},
   methods: {
-    hyChange(value) {
-      console.log(value);
-      if (value === "0") {
-        this.dataRight1 = [1, 2, 1, 4, 2, 6]; //右侧三组数据
-        this.dataRight2 = [1, 2, 4, 4, 5, 6, 7, 8]; //右侧三组数据
-        this.dataRight3 = [8, 3, 6, 5, 5, 3, 2, 1]; //右侧三组数据
-      }
-      if (value === "1") {
-        this.dataRight1 = [3, 2, 4, 4, 3, 6]; //右侧三组数据
-        this.dataRight2 = [4, 2, 2, 1, 2, 6, 5, 8]; //右侧三组数据
-        this.dataRight3 = [1, 7, 1, 5, 6, 7, 2, 1]; //右侧三组数据
-      }
-      if (value === "2") {
-        this.dataRight1 = [3, 2, 3, 4, 5, 3]; //右侧三组数据
-        this.dataRight2 = [7, 1, 1, 5, 5, 6, 7, 1]; //右侧三组数据
-        this.dataRight3 = [8, 7, 4, 5, 8, 5, 1, 3]; //右侧三组数据
-      }
-      this.piedemo();
-    },
-    // 下拉选
-    getJGHpie1(value) {
-      console.log(value);
-      if (value === "0") {
-        this.dataPie2 = [
-          56.3,
-          56.4,
-          57.5,
-          55.6,
-          86.1,
-          84.8,
-          79.6,
-          84.1,
-          70.1,
-          42.4,
-          65.8,
-          84.7
-        ];
-      }
-      if (value === "1") {
-        this.dataPie2 = [
-          56.3,
-          66.4,
-          57.5,
-          65.6,
-          86.1,
-          74.8,
-          79.6,
-          44.1,
-          30.1,
-          32.4,
-          15.8,
-          24.7
-        ];
-      }
-      this.piedemo();
-    },
-    getJGHpie2(value) {
-      console.log(value);
-    },
     // 当前日期
     currentTime() {
       setInterval(this.getDate, 500);
@@ -331,7 +240,6 @@ export default {
         { name: "海南", value: 14 }
       ];
       map1.setOption({
-        roam: false,
         tooltip: {
           show: false,
           trigger: "item",
@@ -392,7 +300,7 @@ export default {
               show: true
             }
           },
-          roam: false,
+          roam: true,
           scaleLimit: {
             min: 1.2,
             max: 15
@@ -454,7 +362,7 @@ export default {
                 }
               }
             },
-            // roam: "scale",
+            roam: "scale",
             itemStyle: {
               normal: {
                 areaColor: "#031525",
@@ -488,23 +396,11 @@ export default {
       let pie3 = this.$echarts.init(document.getElementById("pie3")); //图3
       let pie4 = this.$echarts.init(document.getElementById("pie4")); //图4
       let pie5 = this.$echarts.init(document.getElementById("pie5")); //图5
-      let pie6 = this.$echarts.init(document.getElementById("pie6")); //图6
+      // let pie6 = this.$echarts.init(document.getElementById("pie6")); //图6
       let pie7 = this.$echarts.init(document.getElementById("pie7")); //图7
+      let pie8 = this.$echarts.init(document.getElementById("pie8")); //图8
       // pie1
-      var datas = [
-        96.3,
-        96.4,
-        97.5,
-        95.6,
-        98.1,
-        94.8,
-        89.6,
-        94.1,
-        80.1,
-        52.4,
-        75.8,
-        94.7
-      ];
+      var datas = [76.3, 46.4, 37.5, 95.6, 88.1, 94.8, 49.6];
       pie1.setOption({
         title: {
           text: "",
@@ -538,7 +434,7 @@ export default {
         grid: {
           left: "5%",
           right: "5%",
-          bottom: "2%",
+          bottom: "10%",
           top: "14%",
           containLabel: true
         },
@@ -552,18 +448,13 @@ export default {
               }
             },
             data: [
-              "1月",
-              "2月",
-              "3月",
-              "4月",
-              "5月",
-              "6月",
-              "7月",
-              "8月",
-              "9月",
-              "10月",
-              "11月",
-              "12月"
+              "2021Q3",
+              "2021Q4",
+              "2022Q1",
+              "2022Q2",
+              "2022Q3",
+              "2022Q4",
+              "2023Q1"
             ],
             axisLabel: {
               interval: 0,
@@ -577,66 +468,80 @@ export default {
         yAxis: [
           {
             type: "value",
-            interval: 40,
-            max: 120,
+            interval: 30,
+            // max: 120,
             axisTick: {
               show: false
             },
             axisLine: {
               lineStyle: {
-                color: "#57617B"
+                color: "rgba(255,255,255,0.12)"
               }
             },
             axisLabel: {
-              show: false,
+              show: true,
               textStyle: {
+                color: "#fff",
                 fontSize: this.setFontsize(0.14)
               }
             },
             splitLine: {
               lineStyle: {
-                color: "#57617B"
+                color: "rgba(255,255,255,0.12)"
               }
             }
           }
         ],
+        dataZoom: [
+          {
+            show: true,
+            height: this.setFontsize(0.16),
+            xAxisIndex: [0],
+            bottom: "2%",
+            start: 0,
+            end: 50,
+            handleIcon:
+              "path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z",
+            handleSize: "110%",
+            handleStyle: {
+              color: "#d3dee5"
+            },
+            textStyle: {
+              show: false,
+              color: "#fff",
+              fontSize: this.setFontsize(0.12)
+            },
+            borderColor: "#90979c"
+          },
+          {
+            type: "inside",
+            show: true,
+            height: 15,
+            start: 1,
+            end: 35
+          }
+        ],
         series: [
           {
-            name: "指数",
+            name: "金额（万亿）",
             type: "line",
-            smooth: true,
+            smooth: false,
             lineStyle: {
               normal: {
                 width: 2
               }
             },
-            areaStyle: {
-              normal: {
-                color: new this.$echarts.graphic.LinearGradient(
-                  0,
-                  0,
-                  0,
-                  1,
-                  [
-                    {
-                      offset: 0,
-                      color: "rgba(82, 191, 255, 0.9)"
-                    },
-                    {
-                      offset: 0.8,
-                      color: "rgba(82, 191, 255, 0)"
-                    }
-                  ],
-                  false
-                ),
-                shadowColor: "rgba(228, 139, 76, 0.1)",
-                shadowBlur: 10
-              }
-            },
+            // areaStyle: {
+            //   normal: {
+            //     // color: "#856BF8",
+            //     // shadowColor: "#856BF8",
+            //     // shadowBlur: 10
+            //   }
+            // },
             symbolSize: 4,
             itemStyle: {
               normal: {
-                color: "rgb(82, 191, 255)"
+                color: "#856BF8"
               }
             },
             data: datas
@@ -644,464 +549,7 @@ export default {
         ]
       });
       // pie2
-      var datas2 = this.dataPie2;
       pie2.setOption({
-        title: {
-          text: "",
-          textStyle: {
-            fontWeight: "normal",
-            fontSize: this.setFontsize(0.12),
-            color: "#F1F1F3"
-          },
-          left: "6%"
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            lineStyle: {
-              color: "#57617B"
-            }
-          }
-        },
-        legend: {
-          icon: "rect",
-          itemWidth: 14,
-          itemHeight: 5,
-          itemGap: 13,
-          // data: ["建筑", "能源", "可选消费"],
-          left: "4%",
-          textStyle: {
-            fontSize: this.setFontsize(0.16),
-            color: "#F1F1F3"
-          }
-        },
-        grid: {
-          left: "5%",
-          right: "5%",
-          bottom: "2%",
-          top: "14%",
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: "category",
-            boundaryGap: false,
-            axisLine: {
-              lineStyle: {
-                color: "#fff"
-              }
-            },
-            data: [
-              "1月",
-              "2月",
-              "3月",
-              "4月",
-              "5月",
-              "6月",
-              "7月",
-              "8月",
-              "9月",
-              "10月",
-              "11月",
-              "12月"
-            ],
-            axisLabel: {
-              interval: 0,
-              rotate: 0,
-              textStyle: {
-                fontSize: this.setFontsize(0.14)
-              }
-            }
-          }
-        ],
-        yAxis: [
-          {
-            type: "value",
-            interval: 40,
-            max: 120,
-            axisTick: {
-              show: false
-            },
-            axisLine: {
-              lineStyle: {
-                color: "#57617B"
-              }
-            },
-            axisLabel: {
-              show: false,
-              textStyle: {
-                fontSize: this.setFontsize(0.14)
-              }
-            },
-            splitLine: {
-              lineStyle: {
-                color: "#57617B"
-              }
-            }
-          }
-        ],
-        series: [
-          {
-            type: "line",
-            smooth: true,
-            lineStyle: {
-              normal: {
-                width: 2
-              }
-            },
-            symbolSize: 2,
-            itemStyle: {
-              normal: {
-                color: "#AA453E",
-                borderColor: "#AA453E"
-              }
-            },
-            data: datas2
-          }
-        ]
-      });
-      // pie3
-      var datas5 = this.dataPie5;
-      pie3.setOption({
-        title: {
-          text: "",
-          textStyle: {
-            fontWeight: "normal",
-            fontSize: this.setFontsize(0.12),
-            color: "#F1F1F3"
-          },
-          left: "6%"
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            lineStyle: {
-              color: "#57617B"
-            }
-          }
-        },
-        legend: {
-          icon: "rect",
-          itemWidth: 14,
-          itemHeight: 5,
-          itemGap: 13,
-          // data: ["上海", "江苏", "浙江"],
-          left: "4%",
-          textStyle: {
-            fontSize: this.setFontsize(0.16),
-            color: "#F1F1F3"
-          }
-        },
-        grid: {
-          left: "5%",
-          right: "5%",
-          bottom: "2%",
-          top: "14%",
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: "category",
-            boundaryGap: false,
-            axisLine: {
-              lineStyle: {
-                color: "#fff"
-              }
-            },
-            data: [
-              "1月",
-              "2月",
-              "3月",
-              "4月",
-              "5月",
-              "6月",
-              "7月",
-              "8月",
-              "9月",
-              "10月",
-              "11月",
-              "12月"
-            ],
-            axisLabel: {
-              interval: 0,
-              rotate: 0,
-              textStyle: {
-                fontSize: this.setFontsize(0.14)
-              }
-            }
-          }
-        ],
-        yAxis: [
-          {
-            type: "value",
-            interval: 40,
-            max: 120,
-            axisTick: {
-              show: false
-            },
-            axisLine: {
-              lineStyle: {
-                color: "#57617B"
-              }
-            },
-            axisLabel: {
-              show: false,
-              textStyle: {
-                fontSize: this.setFontsize(0.14)
-              }
-            },
-            splitLine: {
-              lineStyle: {
-                color: "#57617B"
-              }
-            }
-          }
-        ],
-        series: [
-          {
-            type: "line",
-            smooth: true,
-            lineStyle: {
-              normal: {
-                width: 2
-              }
-            },
-            symbolSize: 2,
-            itemStyle: {
-              normal: {
-                color: "#AA453E",
-                borderColor: "#AA453E"
-              }
-            },
-            data: datas5
-          }
-        ]
-      });
-      // pie4
-      var datas7 = [
-        36.3,
-        36.4,
-        67.5,
-        65.6,
-        68.1,
-        84.8,
-        89.6,
-        94.1,
-        80.1,
-        52.4,
-        75.8,
-        94.7
-      ];
-      var datas8 = [
-        56.3,
-        56.4,
-        57.5,
-        55.6,
-        86.1,
-        84.8,
-        79.6,
-        84.1,
-        70.1,
-        42.4,
-        65.8,
-        84.7
-      ];
-      var datas9 = [
-        46.3,
-        46.4,
-        47.5,
-        45.6,
-        48.1,
-        34.8,
-        39.6,
-        34.1,
-        50.1,
-        52.4,
-        65.8,
-        74.7
-      ];
-      pie4.setOption({
-        title: {
-          text: "",
-          textStyle: {
-            fontWeight: "normal",
-            fontSize: this.setFontsize(0.12),
-            color: "#F1F1F3"
-          },
-          left: "6%"
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            lineStyle: {
-              color: "#57617B"
-            }
-          }
-        },
-        legend: {
-          icon: "rect",
-          itemWidth: 14,
-          itemHeight: 5,
-          itemGap: 13,
-          data: ["关注债券发行体数目", "关注债券数目", "关注债券规模（万亿）"],
-          left: "4%",
-          top: "2%",
-          textStyle: {
-            fontSize: this.setFontsize(0.16),
-            color: "#F1F1F3"
-          }
-        },
-        grid: {
-          left: "1%",
-          right: "1%",
-          bottom: "0%",
-          top: "16%",
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: "category",
-            boundaryGap: false,
-            axisLine: {
-              lineStyle: {
-                color: "#fff"
-              }
-            },
-            data: [
-              "1月",
-              "2月",
-              "3月",
-              "4月",
-              "5月",
-              "6月",
-              "7月",
-              "8月",
-              "9月",
-              "10月",
-              "11月",
-              "12月"
-            ],
-            axisLabel: {
-              interval: 0,
-              rotate: 0,
-              textStyle: {
-                fontSize: this.setFontsize(0.14)
-              }
-            }
-          }
-        ],
-        yAxis: [
-          {
-            type: "value",
-            interval: 20,
-            axisTick: {
-              show: false
-            },
-            axisLine: {
-              show: false,
-              lineStyle: {
-                color: "#57617B"
-              }
-            },
-            axisLabel: {
-              show: true,
-              textStyle: {
-                fontSize: this.setFontsize(0.14),
-                color: "#fff"
-              }
-            },
-            splitLine: {
-              show: false,
-              lineStyle: {
-                color: "#57617B"
-              }
-            }
-          },
-          {
-            type: "value",
-            interval: 40,
-            nameTextStyle: {
-              color: "#fff"
-            },
-            position: "right",
-            splitLine: {
-              show: false
-            },
-            axisTick: {
-              show: true
-            },
-            axisLine: {
-              show: true
-            },
-            axisLabel: {
-              formatter: "{value} 万亿", //右侧Y轴文字显示
-              textStyle: {
-                color: "#fff",
-                fontSize: this.setFontsize(0.14)
-              }
-            }
-          }
-        ],
-        series: [
-          {
-            name: "关注债券发行体数目",
-            type: "line",
-            smooth: false,
-            lineStyle: {
-              normal: {
-                width: 2
-              }
-            },
-            symbolSize: 2,
-            itemStyle: {
-              normal: {
-                color: "#bd3367",
-                borderColor: "#bd3367"
-              }
-            },
-            data: datas7
-          },
-          {
-            name: "关注债券数目",
-            type: "line",
-            smooth: false,
-            lineStyle: {
-              normal: {
-                width: 2
-              }
-            },
-            symbolSize: 2,
-            itemStyle: {
-              normal: {
-                color: "#7043eb",
-                borderColor: "#7043eb"
-              }
-            },
-            data: datas8
-          },
-          {
-            name: "关注债券规模（万亿）",
-            type: "line",
-            yAxisIndex: 1,
-            smooth: false,
-            lineStyle: {
-              normal: {
-                width: 2
-              }
-            },
-            symbolSize: 2,
-            itemStyle: {
-              normal: {
-                color: "#77e2ef",
-                borderColor: "#77e2ef"
-              }
-            },
-            data: datas9
-          }
-        ]
-      });
-      // pie5
-      pie5.setOption({
         baseOption: {
           // timeline: {
           //   axisType: "category",
@@ -1127,18 +575,19 @@ export default {
             top: "15%",
             right: "5%",
             left: "10%",
-            bottom: "15%"
+            bottom: "25%"
           },
           xAxis: [
             {
               type: "category",
               data: [
-                "民营企业",
-                "公众企业",
-                "地方国企",
-                "中外合资",
-                "外商独资",
-                "中央国企"
+                "2021Q3",
+                "2021Q4",
+                "2022Q1",
+                "2022Q2",
+                "2022Q3",
+                "2022Q4",
+                "2023Q1"
               ],
               axisLine: {
                 lineStyle: {
@@ -1147,119 +596,7 @@ export default {
               },
               axisLabel: {
                 // margin: 10,
-                color: "#e2e9ff",
-                textStyle: {
-                  fontSize: this.setFontsize(0.12)
-                }
-              }
-            }
-          ],
-          yAxis: [
-            {
-              // name: '单位：万元',
-              // interval: 20,
-              axisLabel: {
-                formatter: "{value}%",
-                color: "#e2e9ff",
-                fontSize: this.setFontsize(0.14)
-              },
-              axisLine: {
-                show: false,
-                lineStyle: {
-                  color: "rgba(255,255,255,1)"
-                }
-              },
-              axisTick: {
-                show: false
-              },
-              splitLine: {
-                lineStyle: {
-                  color: "rgba(255,255,255,0.12)"
-                }
-              }
-            }
-          ],
-          series: [
-            {
-              type: "bar",
-              barWidth: this.setFontsize(0.28),
-              itemStyle: {
-                normal: {
-                  color: new this.$echarts.graphic.LinearGradient(
-                    0,
-                    0,
-                    0,
-                    1,
-                    [
-                      {
-                        offset: 0,
-                        color: "#ACF1E8" // 0% 处的颜色 ACF1E8
-                      },
-                      {
-                        offset: 1,
-                        color: "#00E1C3" // 100% 处的颜色
-                      }
-                    ],
-                    false
-                  )
-                  // barBorderRadius: [30, 30, 30, 30],
-                  // shadowColor: "rgba(0,160,221,1)",
-                  // shadowBlur: 4
-                }
-              },
-              data: this.dataRight1
-            }
-          ]
-        },
-        options: [
-          // {
-          //   series: [{ data: [1, 2, 3, 4, 5, 6] }]
-          // },
-          // {
-          //   series: [{ data: [3, 2, 1, 5, 6, 4] }]
-          // }
-        ]
-      });
-      // pie6
-      pie6.setOption({
-        baseOption: {
-          // timeline: {
-          //   axisType: "category",
-          //   autoPlay: false,
-          //   playInterval: 3000,
-          //   data: ["2020Q2", "2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3"],
-          //   label: {
-          //     formatter: function(s) {
-          //       return s + "";
-          //     }
-          //   },
-          //   lineStyle: {
-          //     color: "#316BF3"
-          //   }
-          // },
-          tooltip: {
-            trigger: "axis",
-            axisPointer: {
-              // type: 'shadow'
-            }
-          },
-          grid: {
-            top: "15%",
-            right: "5%",
-            left: "10%",
-            bottom: "15%"
-          },
-          xAxis: [
-            {
-              type: "category",
-              data: ["AAA", "AA+", "AA", "AA-", "A+", "A", "AA-", "≤BBB"],
-              axisLine: {
-                lineStyle: {
-                  color: "rgba(255,255,255,0.12)"
-                }
-              },
-              axisLabel: {
-                // margin: 10,
+                interval: 0,
                 color: "#e2e9ff",
                 textStyle: {
                   fontSize: this.setFontsize(0.14)
@@ -1272,7 +609,7 @@ export default {
               // name: '单位：万元',
               // interval: 20,
               axisLabel: {
-                formatter: "{value}%",
+                formatter: "{value}",
                 color: "#e2e9ff",
                 fontSize: this.setFontsize(0.14)
               },
@@ -1292,35 +629,48 @@ export default {
               }
             }
           ],
+          dataZoom: [
+            {
+              show: true,
+              height: this.setFontsize(0.16),
+              xAxisIndex: [0],
+              bottom: "2%",
+              start: 0,
+              end: 50,
+              handleIcon:
+                "path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z",
+              handleSize: "110%",
+              handleStyle: {
+                color: "#d3dee5"
+              },
+              textStyle: {
+                show: false,
+                color: "#fff",
+                fontSize: this.setFontsize(0.12)
+              },
+              borderColor: "#90979c"
+            },
+            {
+              type: "inside",
+              show: true,
+              height: 15,
+              start: 1,
+              end: 35
+            }
+          ],
           series: [
             {
               type: "bar",
               barWidth: this.setFontsize(0.28),
               itemStyle: {
                 normal: {
-                  color: new this.$echarts.graphic.LinearGradient(
-                    0,
-                    0,
-                    0,
-                    1,
-                    [
-                      {
-                        offset: 0,
-                        color: "#ACF1E8" // 0% 处的颜色 ACF1E8
-                      },
-                      {
-                        offset: 1,
-                        color: "#00E1C3" // 100% 处的颜色
-                      }
-                    ],
-                    false
-                  )
+                  color: "#8369F4"
                   // barBorderRadius: [30, 30, 30, 30],
                   // shadowColor: "rgba(0,160,221,1)",
                   // shadowBlur: 4
                 }
               },
-              data: this.dataRight2
+              data: [1, 2, 3, 4, 5, 6, 7, 8]
             }
           ]
         },
@@ -1333,41 +683,42 @@ export default {
           // }
         ]
       });
-      // pie7
-      pie7.setOption({
+      // pie3
+      pie3.setOption({
         baseOption: {
-          // timeline: {
-          //   axisType: "category",
-          //   autoPlay: false,
-          //   playInterval: 3000,
-          //   x: "1%",
-          //   width: "100%",
-          //   height: this.setFontsize(0.45),
-          //   // data: ["2020Q2", "2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3"],
-          //   label: {
-          //     formatter: function(s) {
-          //       return s + "";
-          //     }
-          //   },
-          //   lineStyle: {
-          //     color: "#316BF3",
-          //     width: this.setFontsize(0.04)
-          //   },
-          //   label: {
-          //     show: true,
-          //     interval: 0,
-          //     textStyle: {
-          //       color: "#fff",
-          //       fontSize: this.setFontsize(0.12)
-          //     }
-          //   },
-          //   controlStyle: {
-          //     normal: {
-          //       color: "#fff",
-          //       fontSize: this.setFontsize(0.12)
-          //     }
-          //   }
-          // },
+          timeline: {
+            axisType: "category",
+            autoPlay: false,
+            playInterval: 3000,
+            x: "5%",
+            y2: "7%",
+            width: "80%",
+            height: this.setFontsize(0.45),
+            data: ["日", "月", "季", "年"],
+            label: {
+              formatter: function(s) {
+                return s + "";
+              }
+            },
+            lineStyle: {
+              color: "#8369F4",
+              width: this.setFontsize(0.04)
+            },
+            label: {
+              show: true,
+              interval: 0,
+              textStyle: {
+                color: "#fff",
+                fontSize: this.setFontsize(0.14)
+              }
+            },
+            controlStyle: {
+              normal: {
+                color: "#fff",
+                fontSize: this.setFontsize(0.1)
+              }
+            }
+          },
           tooltip: {
             trigger: "axis",
             axisPointer: {
@@ -1378,20 +729,19 @@ export default {
             top: "15%",
             right: "5%",
             left: "10%",
-            bottom: "15%"
+            bottom: "40%"
           },
           xAxis: [
             {
               type: "category",
               data: [
-                "建筑工程",
-                "能源",
-                "房地产",
-                "综合",
-                "商业服务",
-                "制造业",
-                "可选零售",
-                "运输"
+                "2021Q3",
+                "2021Q4",
+                "2022Q1",
+                "2022Q2",
+                "2022Q3",
+                "2022Q4",
+                "2023Q1"
               ],
               axisLine: {
                 lineStyle: {
@@ -1414,7 +764,588 @@ export default {
               // name: '单位：万元',
               // interval: 20,
               axisLabel: {
-                formatter: "{value}%",
+                formatter: "{value}",
+                color: "#e2e9ff",
+                fontSize: this.setFontsize(0.14)
+              },
+              axisLine: {
+                show: false,
+                lineStyle: {
+                  color: "rgba(255,255,255,1)"
+                }
+              },
+              axisTick: {
+                show: false
+              },
+              splitLine: {
+                lineStyle: {
+                  color: "rgba(255,255,255,0.12)"
+                }
+              }
+            }
+          ],
+          dataZoom: [
+            {
+              show: true,
+              height: this.setFontsize(0.14),
+              xAxisIndex: [0],
+              bottom: "2%",
+              start: 0,
+              end: 50,
+              handleIcon:
+                "path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z",
+              handleSize: "110%",
+              handleStyle: {
+                color: "#d3dee5"
+              },
+              textStyle: {
+                show: false,
+                color: "#fff",
+                fontSize: this.setFontsize(0.12)
+              },
+              borderColor: "#90979c"
+            },
+            {
+              type: "inside",
+              show: true,
+              height: 15,
+              start: 1,
+              end: 35
+            }
+          ],
+          series: [
+            {
+              type: "bar",
+              barWidth: this.setFontsize(0.28),
+              itemStyle: {
+                normal: {
+                  color: "#8369F4"
+                  // barBorderRadius: [30, 30, 30, 30],
+                  // shadowColor: "rgba(0,160,221,1)",
+                  // shadowBlur: 4
+                }
+              }
+              // data: [8, 7, 6, 5, 4, 3, 2, 1]
+            }
+          ]
+        },
+        options: [
+          {
+            series: [{ data: [8, 7, 6, 5, 4, 3, 2] }]
+          },
+          {
+            series: [{ data: [7, 6, 5, 4, 3, 2, 1] }]
+          },
+          {
+            series: [{ data: [8, 7, 6, 5, 4, 3, 2] }]
+          },
+          {
+            series: [{ data: [6, 5, 4, 5, 4, 6, 2] }]
+          }
+        ]
+      });
+      // pie4
+      var legendData = [
+        { value: 14, name: "同业存单" },
+        { value: 35, name: "短期融资券" },
+        { value: 10, name: "中期票据" },
+        { value: 74, name: "定向工具" },
+        { value: 24, name: "公司债" },
+        { value: 34, name: "企业债" },
+        { value: 7, name: "商业银行债" },
+        { value: 24, name: "商业银行次级债" },
+        { value: 24, name: "证券机构债" },
+        { value: 29, name: "保险公司债" },
+        { value: 14, name: "其他金融机构债" },
+        { value: 64, name: "政府支持机构债" },
+        { value: 24, name: "国际机构债" },
+        { value: 29, name: "资产支持证券" }
+      ];
+      pie4.setOption({
+        tooltip: {
+          // formatter: '{c} 万亿',
+          trigger: "item"
+        },
+        grid: {
+          top: "15%",
+          right: "10%",
+          left: "10%",
+          bottom: "15%"
+        },
+        color: [
+          "#4992ff",
+          "#7cffb2",
+          "#fddd60",
+          "#ff6e76",
+          "#58d9f9",
+          "#f97d58"
+        ],
+        legend: {
+          orient: "vertical",
+          right: "20%",
+          y: "center",
+          itemWidth: 8,
+          itemHeight: 8,
+          itemGap: 2,
+          data: legendData,
+          textStyle: {
+            color: "rgba(255,255,255,.9)",
+            fontSize: this.setFontsize(0.16)
+            // padding: [0, 0, 0, 10]
+          }
+        },
+        series: [
+          {
+            name: "金额（万亿）",
+            type: "pie",
+            radius: ["40%", "80%"],
+            center: ["30%", "50%"],
+            data: legendData,
+            label: {
+              show: false,
+              position: "outside"
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)"
+              }
+            }
+          }
+        ]
+      });
+      // pie5
+      pie5.setOption({
+        baseOption: {
+          // timeline: {
+          //   axisType: "category",
+          //   autoPlay: false,
+          //   playInterval: 3000,
+          //   data: ["2020Q2", "2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3"],
+          //   label: {
+          //     formatter: function(s) {
+          //       return s + "";
+          //     }
+          //   },
+          //   lineStyle: {
+          //     color: "#316BF3"
+          //   }
+          // },
+          tooltip: {
+            trigger: "item",
+            formatter: "{b}:{c}%"
+          },
+          grid: {
+            top: "2%",
+            right: "2%",
+            left: "2%",
+            bottom: "2%"
+          },
+          xAxis: [
+            {
+              type: "category",
+              axisLine: {
+                show: false,
+                lineStyle: {
+                  color: "rgba(255,255,255,0.12)"
+                }
+              },
+              axisLabel: {
+                show: false,
+                // margin: 10,
+                color: "#e2e9ff",
+                textStyle: {
+                  fontSize: this.setFontsize(0.12)
+                }
+              }
+            }
+          ],
+          yAxis: [
+            {
+              // name: '单位：万元',
+              // interval: 20,
+              axisLabel: {
+                show: false,
+                formatter: "{b}:{value}%",
+                color: "#e2e9ff",
+                fontSize: this.setFontsize(0.14)
+              },
+              axisLine: {
+                show: false,
+                lineStyle: {
+                  color: "rgba(255,255,255,1)"
+                }
+              },
+              axisTick: {
+                show: false
+              },
+              splitLine: {
+                show: false,
+                lineStyle: {
+                  color: "rgba(255,255,255,0.12)"
+                }
+              }
+            }
+          ],
+          series: [
+            {
+              type: "treemap",
+              roam: false,
+              nodeClick: false,
+              breadcrumb: {
+                show: false
+              },
+              itemStyle: {
+                color: ["#584CAA"]
+              },
+              levels: [
+                {
+                  itemStyle: {
+                    // borderColor: "#fff",
+                    borderWidth: 0,
+                    gapWidth: 0
+                  }
+                },
+                {
+                  colorSaturation: [0.8, 0.5],
+                  itemStyle: {
+                    color: ["#584CAA"],
+                    gapWidth: 2,
+                    borderWidth: 0,
+                    borderColor: "#012264"
+                  }
+                }
+              ],
+              label: {
+                fontSize: this.setFontsize(0.18),
+                // formatter: "{b}:{c}%"
+                formatter: function(value) {
+                  var html = value.name + ":" + value.value + "%";
+                  return html;
+                }
+              },
+              data: [
+                {
+                  children: [
+                    {
+                      name: "公用事业",
+                      value: 60
+                    },
+                    {
+                      name: "金融",
+                      value: 10
+                    },
+                    {
+                      name: "能源",
+                      value: 5
+                    },
+                    {
+                      name: "工业",
+                      value: 5
+                    },
+                    {
+                      name: "房地产",
+                      value: 15
+                    },
+                    {
+                      name: "信息技术",
+                      value: 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+
+      // pie7
+      pie7.setOption({
+        baseOption: {
+          legend: {
+            icon: "rect",
+            itemWidth: 14,
+            itemHeight: 5,
+            itemGap: 13,
+            data: ["债券数目", "发行体数目", "债券规模（亿）"],
+            left: "4%",
+            textStyle: {
+              fontSize: this.setFontsize(0.16),
+              color: "#F1F1F3"
+            }
+          },
+          // timeline: {
+          //   axisType: "category",
+          //   autoPlay: false,
+          //   playInterval: 3000,
+          //   data: ["2020Q2", "2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3"],
+          //   label: {
+          //     formatter: function(s) {
+          //       return s + "";
+          //     }
+          //   },
+          //   lineStyle: {
+          //     color: "#316BF3"
+          //   }
+          // },
+          dataZoom: [
+            {
+              show: true,
+              height: this.setFontsize(0.14),
+              xAxisIndex: [0],
+              bottom: "2%",
+              start: 0,
+              end: 50,
+              handleIcon:
+                "path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z",
+              handleSize: "110%",
+              handleStyle: {
+                color: "#d3dee5"
+              },
+              textStyle: {
+                show: false,
+                color: "#fff",
+                fontSize: this.setFontsize(0.12)
+              },
+              borderColor: "#90979c"
+            },
+            {
+              type: "inside",
+              show: true,
+              height: 15,
+              start: 1,
+              end: 35
+            }
+          ],
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              // type: 'shadow'
+            }
+          },
+          grid: {
+            top: "15%",
+            right: "10%",
+            left: "10%",
+            bottom: "25%"
+          },
+          xAxis: [
+            {
+              type: "category",
+              data: [
+                "2021-03",
+                "2021-04",
+                "2022-01",
+                "2022-02",
+                "2022-03",
+                "2022-04"
+              ],
+              axisLine: {
+                lineStyle: {
+                  color: "rgba(255,255,255,0.12)"
+                }
+              },
+              axisLabel: {
+                // margin: 10,
+                interval: 0,
+                color: "#e2e9ff",
+                textStyle: {
+                  fontSize: this.setFontsize(0.14)
+                }
+              }
+            }
+          ],
+          yAxis: [
+            {
+              // name: '单位：万元',
+              // interval: 20,
+              axisLabel: {
+                formatter: "{value}",
+                color: "#e2e9ff",
+                fontSize: this.setFontsize(0.14)
+              },
+              axisLine: {
+                show: false,
+                lineStyle: {
+                  color: "rgba(255,255,255,1)"
+                }
+              },
+              axisTick: {
+                show: false
+              },
+              splitLine: {
+                lineStyle: {
+                  color: "rgba(255,255,255,0.12)"
+                }
+              }
+            },
+            {
+              type: "value",
+              // interval: 40,
+              nameTextStyle: {
+                color: "#fff"
+              },
+              position: "right",
+              splitLine: {
+                show: false
+              },
+              axisTick: {
+                show: true
+              },
+              axisLine: {
+                show: true
+              },
+              axisLabel: {
+                formatter: "{value} 亿", //右侧Y轴文字显示
+                textStyle: {
+                  color: "#fff",
+                  fontSize: this.setFontsize(0.14)
+                }
+              }
+            }
+          ],
+          series: [
+            {
+              name: "债券数目",
+              type: "bar",
+              barWidth: this.setFontsize(0.18),
+              itemStyle: {
+                normal: {
+                  color: "#8369F4"
+                  // barBorderRadius: [30, 30, 30, 30],
+                  // shadowColor: "rgba(0,160,221,1)",
+                  // shadowBlur: 4
+                }
+              },
+              data: [1, 2, 3, 4, 5, 6]
+            },
+            {
+              name: "发行体数目",
+              type: "bar",
+              barWidth: this.setFontsize(0.18),
+              itemStyle: {
+                normal: {
+                  color: "#1CBFCF"
+                  // barBorderRadius: [30, 30, 30, 30],
+                  // shadowColor: "rgba(0,160,221,1)",
+                  // shadowBlur: 4
+                }
+              },
+              data: [1, 2, 3, 4, 5, 6]
+            },
+            {
+              name: "债券规模（亿）",
+              type: "line",
+              yAxisIndex: 1,
+              barWidth: this.setFontsize(0.28),
+              itemStyle: {
+                normal: {
+                  color: "#AF495B"
+                  // barBorderRadius: [30, 30, 30, 30],
+                  // shadowColor: "rgba(0,160,221,1)",
+                  // shadowBlur: 4
+                }
+              },
+              data: [1, 2, 3, 4, 5, 6]
+            }
+          ]
+        },
+        options: [
+          // {
+          //   series: [{ data: [1, 2, 3, 4, 5, 6] }]
+          // },
+          // {
+          //   series: [{ data: [3, 2, 1, 5, 6, 4] }]
+          // }
+        ]
+      });
+      // pie8
+      pie8.setOption({
+        baseOption: {
+          timeline: {
+            axisType: "category",
+            autoPlay: false,
+            playInterval: 3000,
+            x: "5%",
+            width: "80%",
+            height: this.setFontsize(0.45),
+            data: ["AAA", "AA+", "AA"],
+            label: {
+              formatter: function(s) {
+                return s + "";
+              }
+            },
+            lineStyle: {
+              color: "#8369F4",
+              width: this.setFontsize(0.04)
+            },
+            label: {
+              show: true,
+              interval: 0,
+              textStyle: {
+                color: "#fff",
+                fontSize: this.setFontsize(0.14)
+              }
+            },
+            controlStyle: {
+              normal: {
+                color: "#fff",
+                fontSize: this.setFontsize(0.12)
+              }
+            }
+          },
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              // type: 'shadow'
+            }
+          },
+          grid: {
+            top: "15%",
+            right: "5%",
+            left: "10%",
+            bottom: "35%"
+          },
+          xAxis: [
+            {
+              type: "category",
+              data: [
+                "2021-3",
+                "2021-4",
+                "2022-1",
+                "2022-2",
+                "2022-3",
+                "2022-4",
+                "2023-1"
+              ],
+              axisLine: {
+                lineStyle: {
+                  color: "rgba(255,255,255,0.12)"
+                }
+              },
+              axisLabel: {
+                // margin: 10,
+                color: "#e2e9ff",
+                interval: 0,
+                // rotate: 10,
+                textStyle: {
+                  fontSize: this.setFontsize(0.12)
+                }
+              }
+            }
+          ],
+          yAxis: [
+            {
+              // name: '单位：万元',
+              // interval: 20,
+              axisLabel: {
+                formatter: "{value}bps",
                 color: "#e2e9ff",
                 fontSize: this.setFontsize(0.14)
               },
@@ -1436,9 +1367,17 @@ export default {
           ],
           series: [
             {
-              type: "bar",
+              type: "line",
               barWidth: this.setFontsize(0.28),
               itemStyle: {
+                normal: {
+                  color: "#8369F4"
+                  // barBorderRadius: [30, 30, 30, 30],
+                  // shadowColor: "rgba(0,160,221,1)",
+                  // shadowBlur: 4
+                }
+              },
+              areaStyle: {
                 normal: {
                   color: new this.$echarts.graphic.LinearGradient(
                     0,
@@ -1448,43 +1387,33 @@ export default {
                     [
                       {
                         offset: 0,
-                        color: "#ACF1E8" // 0% 处的颜色 ACF1E8
+                        color: "#8369F4"
                       },
                       {
-                        offset: 1,
-                        color: "#00E1C3" // 100% 处的颜色
+                        offset: 0.8,
+                        color: "rgba(82, 191, 255, 0)"
                       }
                     ],
                     false
-                  )
-                  // barBorderRadius: [30, 30, 30, 30],
-                  // shadowColor: "rgba(0,160,221,1)",
-                  // shadowBlur: 4
+                  ),
+                  shadowColor: "rgba(228, 139, 76, 0.1)",
+                  shadowBlur: 10
                 }
-              },
-              data: this.dataRight3
+              }
+              // data: [8, 7, 6, 5, 4, 3, 2, 1]
             }
           ]
         },
         options: [
-          // {
-          //   series: [{ data: [8, 7, 6, 5, 4, 3, 2, 1] }]
-          // },
-          // {
-          //   series: [{ data: [7, 6, 5, 4, 3, 2, 1, 8] }]
-          // },
-          // {
-          //   series: [{ data: [8, 7, 6, 5, 4, 3, 2, 1] }]
-          // },
-          // {
-          //   series: [{ data: [6, 5, 4, 5, 4, 6, 2, 1] }]
-          // },
-          // {
-          //   series: [{ data: [9, 7, 3, 5, 7, 3, 2, 1] }]
-          // },
-          // {
-          //   series: [{ data: [4, 7, 6, 2, 3, 4, 1, 8] }]
-          // }
+          {
+            series: [{ data: [1, 2, 4, 5, 4, 3, 2] }]
+          },
+          {
+            series: [{ data: [7, 6, 5, 4, 3, 2, 1] }]
+          },
+          {
+            series: [{ data: [2, 7, 4, 3, 4, 3, 2] }]
+          }
         ]
       });
     }
@@ -1534,13 +1463,50 @@ export default {
 </script>
 <style lang="scss" scoped>
 // 风险视图Echarts css
+.box3_modr2_ul {
+  padding: 0px;
+  margin: 40px;
+  li {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+    .p1 {
+      width: 60%;
+    }
+    .p2 {
+      font-size: 36px;
+      color: #d7b29c;
+      margin-right: 20px;
+    }
+  }
+}
+.modBox1_tit {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 32px;
+  margin: 10px auto;
+  text-align: center;
+  .p1 {
+    border-right: 5px solid #6e42e4;
+    padding-right: 20px;
+    margin-right: 20px;
+  }
+  .p2 {
+    letter-spacing: 1px;
+  }
+}
 .map1 {
   width: 100%;
   height: 100%;
 }
 .pie4 {
   width: 100%;
-  height: 80%;
+  height: 70%;
 }
 .pie5 {
   width: 100%;
@@ -1553,6 +1519,10 @@ export default {
 .pie7 {
   width: 100%;
   height: 80%;
+}
+.pie8 {
+  width: 100%;
+  height: 85%;
 }
 .modBox1_ul {
   padding: 0px;
@@ -1571,27 +1541,11 @@ export default {
       padding: 5px 10px 5px 10px;
       text-align: center;
       font-size: 20px;
-      &.c1 {
-        color: #bd3367;
-      }
-      &.c2 {
-        color: #7043eb;
-      }
-      &.c3 {
-        color: #77e2ef;
-      }
+      color: #fff;
       .tit {
         padding-top: 5px;
         padding-bottom: 5px;
-        &.c1 {
-          border-bottom: 5px solid #bd3367;
-        }
-        &.c2 {
-          border-bottom: 5px solid #7043eb;
-        }
-        &.c3 {
-          border-bottom: 5px solid #77e2ef;
-        }
+        border-bottom: 5px solid #7043eb;
       }
       .txt {
         font-size: 22px;
@@ -1660,25 +1614,13 @@ export default {
 .selectBox {
   position: absolute;
   z-index: 999;
-  width: 40%;
-  top: 40px;
+  width: 25%;
+  top: 5px;
   height: 50px;
   right: 0%;
   display: flex;
   flex-direction: row;
-  .time {
-    color: #fff;
-    font-size: 12px;
-    line-height: 30px;
-  }
-  &.sel {
-    top: -38px;
-    width: 60%;
-    flex-direction: row-reverse;
-    .ccbSelect {
-      width: 50%;
-    }
-  }
+  z-index: 999;
   .box4_tab {
     width: 40%;
     height: 50%;
@@ -1898,7 +1840,7 @@ ul {
     display: flex;
     flex-direction: column;
     .modBox1 {
-      height: 45%;
+      height: 61%;
       border: 1px solid #093e90;
       background-color: rgba(1, 54, 108, 0.6);
       position: relative;
@@ -1908,10 +1850,21 @@ ul {
       padding: 10px;
     }
     .modBox2 {
-      margin-top: 1%;
-      height: 49%;
+      margin-top: 2%;
+      height: 32%;
       border: 1px solid #093e90;
       background-color: rgba(1, 54, 108, 0.6);
+      .title {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        letter-spacing: 2px;
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        background-color: #2b4a81;
+        // font-weight: 700;
+      }
     }
   }
   .box3 {
@@ -2419,10 +2372,10 @@ ul {
   }
   .el-select-dropdown {
     border: 1px solid #6088b1;
-    background-color: #012265;
+    background-color: #2b4a81;
   }
   .el-input__inner {
-    background-color: #012265;
+    background-color: #2b4a81;
     border: 1px solid #6088b1;
     height: 30px;
     line-height: 30px;

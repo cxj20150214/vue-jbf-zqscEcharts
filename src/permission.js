@@ -70,7 +70,10 @@ router.beforeEach(async (to, from, next) => {
       next()
     } else if (to.path === '/demo8') {
       next()
-    } else if (to.path === '/merchant') {
+    } else if (to.path === '/demo9') {
+      next()
+    } 
+    else if (to.path === '/merchant') {
       next()
     } else {
       // other pages that do not have permission to access are redirected to the login page.
